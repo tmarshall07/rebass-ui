@@ -23,7 +23,7 @@ const theme = ({ scheme = 'dark' }: { scheme: Scheme }): ThemeType => ({
   },
   // link: {},
   // text: {},
-  // buttons: {},
+  //   buttons: {},
   // variants: {},
 });
 
