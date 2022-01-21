@@ -11,7 +11,6 @@ import IconButton from '../components/IconButton';
 import Icon from '../components/Icon';
 import { faFanTable } from '@fortawesome/pro-duotone-svg-icons';
 import Switch from '../components/Switch';
-import { useState } from 'react';
 import { useSchemeContext } from '../context/SchemeContext';
 
 type Props = {};

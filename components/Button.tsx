@@ -26,7 +26,6 @@ const sizes: {
 };
 
 const outline = (color: string) => {
-  console.log(color);
   return {
     bg: 'transparent',
     color,
@@ -70,7 +69,7 @@ export default function Button(props: ButtonProps) {
   const {
     children,
     color: colorProp = 'text',
-    bg = 'gray10',
+    bg = 'gray5',
     sx,
     startIcon,
     variant,
