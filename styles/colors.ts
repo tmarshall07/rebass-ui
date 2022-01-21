@@ -97,10 +97,8 @@ export function isColor(s: string): s is Color {
   return !!schemes.dark[s] && !!schemes.light[s];
 }
 
-export const getColors = (scheme: Scheme = 'dark'): ColorProps =>
-  schemes[scheme];
+export const getColors = (scheme: Scheme = 'dark'): ColorProps => schemes[scheme];
 
-export const getColor = (scheme: Scheme = 'dark', key: string): string =>
-  schemes[scheme]?.[key] || '';
+export const getColor = (scheme: Scheme = 'dark', key: string): string => schemes[scheme]?.[key] || '';
 
 export default getColors;

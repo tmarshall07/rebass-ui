@@ -16,7 +16,11 @@ import { useSchemeContext } from '../context/SchemeContext';
 type Props = {};
 
 const Components = (props: Props) => {
-  const { setScheme, setAuto, scheme } = useSchemeContext();
+  const { setScheme, setAuto, auto, scheme } = useSchemeContext();
+
+  const handleSetAuto = () => {
+    setAuto(!auto);
+  };
 
   const handleSetScheme = () => {
     setAuto(false);
@@ -26,6 +30,18 @@ const Components = (props: Props) => {
   return (
     <Box bg="bg-0">
       <Box p={5}>
+        <Box m={3}>
+          <Box mb={3}>
+            <H3 mb={2}>System</H3>
+            <P mb={2}>When active, the color scheme will match the system's preference.</P>
+            <Switch checked={auto} onClick={handleSetAuto} />
+          </Box>
+
+          <H3 mb={2}>Dark mode</H3>
+          <P mb={2}>Cannot change dark mode unless system is deactivated.</P>
+          <Switch disabled={auto} checked={scheme === 'dark'} onClick={handleSetScheme} />
+        </Box>
+
         <Box bg="gray10" p={3}>
           Box
         </Box>
@@ -37,10 +53,6 @@ const Components = (props: Props) => {
         <H3>H3</H3>
         <H4>H4</H4>
         <P>P</P>
-
-        <Box m={3}>
-          <Switch checked={scheme === 'dark'} onClick={handleSetScheme} />
-        </Box>
 
         <Box m={3}>
           <Input placeholder="Start typing..." />
