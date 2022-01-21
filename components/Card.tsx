@@ -5,7 +5,8 @@ import Box from './Box';
 const Card = (props: BoxProps) => (
   <Box
     p={[3, 4]}
-    bg="white"
+    bg="bg-0"
+    color="text"
     {...props}
     sx={{
       boxShadow: 'large',

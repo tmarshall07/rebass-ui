@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import useDebounce from './../../hooks/useDebounce';
-import Autocomplete, { AutocompleteProps } from './Autocomplete';
+import Autocomplete, { AutocompleteProps, Item } from './Autocomplete';
 
 type Props = AutocompleteProps & {
-  onSelect: (item: any) => void;
+  onSelect: (item: Item) => void;
   debounce?: number;
   formatResponse?: (data: any) => any[];
   request: (value: string) => Promise<any>;

@@ -1,5 +1,5 @@
+import React from 'react';
 import Input from '../components/Input';
-import ThemeProvider from '../providers/ThemeProvider';
 import { H1, H2, H3, H4, P } from '../components/Text';
 import { Box } from '../components/Box';
 import Card from '../components/Card';
@@ -10,10 +10,22 @@ import Button from '../components/Button';
 import IconButton from '../components/IconButton';
 import Icon from '../components/Icon';
 import { faFanTable } from '@fortawesome/pro-duotone-svg-icons';
+import Switch from '../components/Switch';
+import { useState } from 'react';
+import { useSchemeContext } from '../context/SchemeContext';
 
-export default function Home() {
+type Props = {};
+
+const Components = (props: Props) => {
+  const { setScheme, setAuto, scheme } = useSchemeContext();
+
+  const handleSetScheme = () => {
+    setAuto(false);
+    setScheme(scheme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
-    <ThemeProvider>
+    <Box bg="bg-0">
       <Box p={5}>
         <Box bg="gray10" p={3}>
           Box
@@ -27,7 +39,13 @@ export default function Home() {
         <H4>H4</H4>
         <P>P</P>
 
-        <Input placeholder="Start typing..." />
+        <Box m={3}>
+          <Switch checked={scheme === 'dark'} onClick={handleSetScheme} />
+        </Box>
+
+        <Box m={3}>
+          <Input placeholder="Start typing..." />
+        </Box>
 
         <Box m={3}>
           <Autocomplete
@@ -65,6 +83,8 @@ export default function Home() {
           <IconButton icon={<Icon icon={faFanTable} />} />
         </Box>
       </Box>
-    </ThemeProvider>
+    </Box>
   );
-}
+};
+
+export default Components;

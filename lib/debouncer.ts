@@ -1,7 +1,9 @@
 class Debouncer {
-  timeout: number | null;
+  timeout: ReturnType<typeof setTimeout>;
 
   delay: number;
+
+  value: any;
 
   constructor(initialValue = null, delay = 500) {
     this.value = initialValue;

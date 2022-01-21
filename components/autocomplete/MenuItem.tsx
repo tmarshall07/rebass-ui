@@ -1,9 +1,10 @@
 import React from 'react';
 import { SxProps } from 'rebass';
 import { P } from '../Text';
+import { Item } from './Autocomplete';
 
 interface Props {
-  onSelect: (item: any) => void;
+  onSelect: (item: Item) => void;
   text: string;
   sx?: SxProps;
 }

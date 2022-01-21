@@ -3,14 +3,16 @@ import useClickOutside from '../../hooks/useClickOutside';
 import Box from '../Box';
 import Input from '../Input';
 
+export type Item = any;
+
 export type AutocompleteProps = {
   value: string;
-  items: { [index: string]: any }[];
-  keyExtractor: (item: any) => string | number;
-  renderItem: (item: any) => ReactChild;
+  items: Item[];
+  keyExtractor: (item: Item) => string | number;
+  renderItem: (item: Item) => ReactChild;
   placeholder?: string;
   onChange?: (e: any) => void;
-  onSelect?: (item: any) => void;
+  onSelect?: (item: Item) => void;
   menuStyle?: { [index: string]: string | number };
 };
 
@@ -38,7 +40,7 @@ const Autocomplete = (props: AutocompleteProps) => {
         <Box
           sx={{
             position: 'absolute',
-            bg: 'white',
+            bg: 'bg-2',
             maxHeight: 300,
             width: 400,
             maxWidth: '80%',

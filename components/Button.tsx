@@ -26,6 +26,7 @@ const sizes: {
 };
 
 const outline = (color: string) => {
+  console.log(color);
   return {
     bg: 'transparent',
     color,
