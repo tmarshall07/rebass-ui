@@ -1,6 +1,6 @@
 import React from 'react';
 import { SxProps } from 'rebass';
-import { P } from '../Text';
+import { P } from './Text';
 import { Item } from './Autocomplete';
 
 interface Props {

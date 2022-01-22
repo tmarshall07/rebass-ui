@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import Debouncer from '../lib/debouncer';
+import Debouncer from '../class/debouncer';
 
 // Hook
 function useDebounce(value, delay = 500) {

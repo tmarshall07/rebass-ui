@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useDebounce from './../../hooks/useDebounce';
+import useDebounce from '../hooks/useDebounce';
 import Autocomplete, { AutocompleteProps, Item } from './Autocomplete';
 
 type Props = AutocompleteProps & {

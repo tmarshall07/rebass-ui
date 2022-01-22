@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Box from '../components/Box';
-import ThemeProvider from '../context/ThemeProvider';
+import Box from '../packages/ui/components/Box';
+import ThemeProvider from '../packages/ui/context/ThemeProvider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

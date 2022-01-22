@@ -1,5 +1,5 @@
 import { useSchemeContext } from '../context/SchemeContext';
-import getColors from '../styles/colors';
+import getColors from '../../../styles/colors';
 
 export default function useColors() {
   const { scheme } = useSchemeContext();

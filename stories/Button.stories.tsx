@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Button from '../components/Button';
-import ThemeProvider from '../context/ThemeProvider';
-import IconButton from '../components/IconButton';
-import FaIcon from '../components/Icon';
+import Button from '../packages/ui/components/Button';
+import ThemeProvider from '../packages/ui/context/ThemeProvider';
+import IconButton from '../packages/ui/components/IconButton';
+import FaIcon from '../packages/ui/components/Icon';
 import { faCheck } from '@fortawesome/pro-duotone-svg-icons';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

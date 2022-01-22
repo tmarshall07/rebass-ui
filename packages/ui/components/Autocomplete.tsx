@@ -1,7 +1,7 @@
 import React, { ReactChild, useRef, useState } from 'react';
-import useClickOutside from '../../hooks/useClickOutside';
-import Box from '../Box';
-import Input from '../Input';
+import useClickOutside from '../hooks/useClickOutside';
+import Box from './Box';
+import Input from './Input';
 
 export type Item = any;
 
