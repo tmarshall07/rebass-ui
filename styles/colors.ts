@@ -30,40 +30,42 @@ const warning = '#E18C5C';
 const positive = '#31aa31';
 const white = '#ffffff';
 
-export type ColorProps = string;
+export type ColorsProps = { [index: string]: string };
 
 type SchemeType = {
-  dark: ColorProps;
-  light: ColorProps;
+  dark: ColorsProps;
+  light: ColorsProps;
+};
+
+export const lightScheme = {
+  text: dark,
+  textInvert: light,
+  primary,
+  primaryText: darken(0.1, primary),
+  'bg-0': lighten(0.05, light),
+  'bg-1': light,
+  'bg-2': darken(0.05, light),
+  'bg-3': darken(0.1, light),
+  gray5: darken(0.05, light),
+  gray10: darken(0.1, light),
+  gray15: darken(0.5, light),
+  gray20: darken(0.2, light),
+  gray30: darken(0.3, light),
+  gray40: darken(0.4, light),
+  gray50: darken(0.5, light),
+  gray60: darken(0.6, light),
+  gray70: darken(0.7, light),
+  gray80: darken(0.8, light),
+  gray90: darken(0.9, light),
+  negative,
+  negativeLight: lighten(0.3, negative),
+  warning,
+  positive,
+  white,
 };
 
 export const schemes: SchemeType = {
-  light: {
-    text: dark,
-    textInvert: light,
-    primary,
-    primaryText: darken(0.1, primary),
-    'bg-0': lighten(0.05, light),
-    'bg-1': light,
-    'bg-2': darken(0.05, light),
-    'bg-3': darken(0.1, light),
-    gray5: darken(0.05, light),
-    gray10: darken(0.1, light),
-    gray15: darken(0.5, light),
-    gray20: darken(0.2, light),
-    gray30: darken(0.3, light),
-    gray40: darken(0.4, light),
-    gray50: darken(0.5, light),
-    gray60: darken(0.6, light),
-    gray70: darken(0.7, light),
-    gray80: darken(0.8, light),
-    gray90: darken(0.9, light),
-    negative,
-    negativeLight: lighten(0.3, negative),
-    warning,
-    positive,
-    white,
-  },
+  light: lightScheme,
 
   dark: {
     text: light,
@@ -97,7 +99,7 @@ export function isColor(s: string): s is Color {
   return !!schemes.dark[s] && !!schemes.light[s];
 }
 
-export const getColors = (scheme: Scheme = 'dark'): ColorProps => schemes[scheme];
+export const getColors = (scheme: Scheme = 'dark'): ColorsProps => schemes[scheme];
 
 export const getColor = (scheme: Scheme = 'dark', key: string): string => schemes[scheme]?.[key] || '';
 

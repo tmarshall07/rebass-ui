@@ -2,7 +2,10 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Autocomplete from '../packages/ui/src/components/Autocomplete';
 import MenuItem from '../packages/ui/src/components/AutocompleteMenuItem';
-import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
+import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import theme from '../styles/theme';
+import { schemes } from '../styles/colors';
+import Box from '../packages/ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,15 +17,17 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Autocomplete> = (args) => (
-  <ThemeProvider>
-    <Autocomplete
-      placeholder="Start typing..."
-      items={[{ id: 'Item 1' }, { id: 'Item 2' }, { id: 'Item 3' }]}
-      keyExtractor={(item) => item.id}
-      renderItem={(item) => <MenuItem text={item.id} />}
-      {...args}
-    />
-  </ThemeProvider>
+  <SchemeProvider theme={theme} colorSchemes={schemes}>
+    <Box p={4} bg="bg-0">
+      <Autocomplete
+        placeholder="Start typing..."
+        items={[{ id: 'Item 1' }, { id: 'Item 2' }, { id: 'Item 3' }]}
+        keyExtractor={(item) => item.id}
+        renderItem={(item) => <MenuItem text={item.id} />}
+        {...args}
+      />
+    </Box>
+  </SchemeProvider>
 );
 
 export const Primary = Template.bind({});

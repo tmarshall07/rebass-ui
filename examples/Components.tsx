@@ -8,10 +8,10 @@ import FetchAutocomplete from '../packages/ui/src/components/FetchAutocomplete';
 import MenuItem from '../packages/ui/src/components/AutocompleteMenuItem';
 import Button from '../packages/ui/src/components/Button';
 import IconButton from '../packages/ui/src/components/IconButton';
-import Icon from '../packages/ui/src/components/Icon';
 import { faFanTable } from '@fortawesome/pro-duotone-svg-icons';
 import Switch from '../packages/ui/src/components/Switch';
 import { useSchemeContext } from '../packages/ui/src/context/SchemeContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type Props = {};
 
@@ -91,7 +91,7 @@ const Components = (props: Props) => {
           <Button variant="outline">Outline button</Button>
           <Button variant="transparent">Transparent button</Button>
 
-          <IconButton icon={<Icon icon={faFanTable} />} />
+          <IconButton icon={<FontAwesomeIcon icon={faFanTable} />} />
         </Box>
       </Box>
     </Box>

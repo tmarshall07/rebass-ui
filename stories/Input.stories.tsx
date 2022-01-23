@@ -1,7 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../packages/ui/src/components/Input';
-import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
+import { theme } from '../styles/theme';
+import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import { schemes } from '../styles/colors';
 import Box from '../packages/ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -23,9 +25,11 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Input> = (args) => (
-  <ThemeProvider>
-    <Input placeholder="Start typing..." {...args} />
-  </ThemeProvider>
+  <SchemeProvider theme={theme} colorSchemes={schemes}>
+    <Box p={4} bg="bg-0">
+      <Input placeholder="Start typing..." {...args} />
+    </Box>
+  </SchemeProvider>
 );
 
 export const Primary = Template.bind({});

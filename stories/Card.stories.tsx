@@ -1,8 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from '../packages/ui/src/components/Card';
-import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
 import Box from '../packages/ui/src/components/Box';
+import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import theme from '../styles/theme';
+import { schemes } from '../styles/colors';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -23,13 +25,13 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Card> = (args) => (
-  <ThemeProvider>
+  <SchemeProvider colorSchemes={schemes} theme={theme}>
     <Box bg="bg-1" p={5}>
       <Card p={4} {...args}>
         I&apos;m a Card
       </Card>
     </Box>
-  </ThemeProvider>
+  </SchemeProvider>
 );
 
 export const Primary = Template.bind({});

@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
-import { ColorProps } from '../../../../styles/colors';
-// import useColorScheme, { ColorSchemeProps } from '../hooks/useColorScheme';
-import getColors, { schemes } from '../../../../styles/colors';
+import React, { useContext, useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 
-import { useEffect, useState } from 'react';
+type ColorsProps = {
+  [index: string]: string;
+};
+
+type SchemeProps = {
+  [index: string]: ColorsProps;
+};
 
 const SCHEMES = ['light', 'dark'] as const;
 type SchemeType = typeof SCHEMES[number];
@@ -96,15 +100,25 @@ function useColorScheme(): ColorSchemeProps {
 type SchemeContextProps = ColorSchemeProps & { colors: ColorProps };
 
 const SchemeContext = React.createContext<SchemeContextProps>({
-  colors: schemes.light,
+  colors: {},
   scheme: 'light',
 } as SchemeContextProps);
 
-export function SchemeProvider({ children }: { children: React.ReactNode }) {
-  const colorScheme = useColorScheme();
-  const colors = getColors(colorScheme.scheme);
+export type SchemeProviderProps = {
+  colorSchemes?: SchemeProps;
+  theme?: { [index: string]: any };
+  children: React.ReactNode;
+};
 
-  return <SchemeContext.Provider value={{ ...colorScheme, colors }}>{children}</SchemeContext.Provider>;
+export function SchemeProvider({ theme = {}, colorSchemes = {}, children }: SchemeProviderProps) {
+  const colorScheme = useColorScheme();
+  const colors = colorSchemes[colorScheme.scheme];
+
+  return (
+    <SchemeContext.Provider value={{ ...colorScheme, colors }}>
+      <ThemeProvider theme={{ ...theme, colors }}>{children}</ThemeProvider>
+    </SchemeContext.Provider>
+  );
 }
 
 export const useSchemeContext = (): SchemeContextProps => useContext(SchemeContext);

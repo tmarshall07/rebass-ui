@@ -1,0 +1,11 @@
+{
+  "name": "bundler",
+  "version": "1.0.0",
+  "description": "Bundler for packages",
+  "main": "index.js",
+  "author": "Tanner Marshall",
+  "license": "MIT",
+  "devDependencies": {
+    "execa": "^6.0.0"
+  }
+}

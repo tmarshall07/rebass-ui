@@ -1,10 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from '../packages/ui/src/components/Button';
-import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
 import IconButton from '../packages/ui/src/components/IconButton';
-import FaIcon from '../packages/ui/src/components/Icon';
 import { faCheck } from '@fortawesome/pro-duotone-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import theme from '../styles/theme';
+import { schemes } from '../styles/colors';
+import { Box } from '../packages/ui/src';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,9 +22,11 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => (
-  <ThemeProvider>
-    <Button {...args} />
-  </ThemeProvider>
+  <SchemeProvider colorSchemes={schemes} theme={theme}>
+    <Box p={4} bg="bg-0">
+      <Button {...args} />
+    </Box>
+  </SchemeProvider>
 );
 
 export const Primary = Template.bind({});
@@ -49,9 +54,11 @@ Small.args = {
 };
 
 const IconButtonTemplate: ComponentStory<typeof Button> = (args) => (
-  <ThemeProvider>
-    <IconButton icon={<FaIcon icon={faCheck} />} {...args} />
-  </ThemeProvider>
+  <SchemeProvider colorSchemes={schemes} theme={theme}>
+    <Box bg="bg-0" p="4">
+      <IconButton icon={<FontAwesomeIcon icon={faCheck} />} {...args} />
+    </Box>
+  </SchemeProvider>
 );
 
 export const Icon = IconButtonTemplate.bind({});

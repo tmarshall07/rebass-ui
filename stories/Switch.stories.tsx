@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Switch from '../packages/ui/src/components/Switch';
-import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
+import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import theme from '../styles/theme';
+import { schemes } from '../styles/colors';
+import Box from '../packages/ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -17,9 +20,11 @@ export default {
 const Template: ComponentStory<typeof Switch> = (args) => {
   const [checked, setChecked] = useState(true);
   return (
-    <ThemeProvider>
-      <Switch onClick={() => setChecked(!checked)} checked={checked} {...args} />
-    </ThemeProvider>
+    <SchemeProvider theme={theme} colorSchemes={schemes}>
+      <Box p={4} bg="bg-0">
+        <Switch onClick={() => setChecked(!checked)} checked={checked} {...args} />
+      </Box>
+    </SchemeProvider>
   );
 };
 

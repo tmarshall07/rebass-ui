@@ -9,7 +9,7 @@ interface Props {
   sx?: SxProps;
 }
 
-const MenuItem = (props: Props) => {
+const AutocompleteMenuItem = (props: Props) => {
   const { onSelect, text, sx = {} } = props;
   return (
     <P
@@ -28,4 +28,4 @@ const MenuItem = (props: Props) => {
   );
 };
 
-export default MenuItem;
+export default AutocompleteMenuItem;

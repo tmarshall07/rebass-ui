@@ -1,17 +1,15 @@
-import getColors, { Scheme } from './colors';
+// import getColors, { Scheme } from './colors';
 
 type ThemeType = {
   fontSizes: number[];
   space: number[];
-  colors: { [index: string]: string };
   fontWeights: { [index: string]: number };
   shadows: { [index: string]: string };
 };
 
-const theme = ({ scheme = 'dark' }: { scheme: Scheme }): ThemeType => ({
+export const theme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   space: [0, 4, 8, 16, 32, 64, 128, 256],
-  colors: getColors(scheme),
   // fonts: {},
   fontWeights: {
     bold: 700,
@@ -25,6 +23,6 @@ const theme = ({ scheme = 'dark' }: { scheme: Scheme }): ThemeType => ({
   // text: {},
   //   buttons: {},
   // variants: {},
-});
+};
 
 export default theme;
