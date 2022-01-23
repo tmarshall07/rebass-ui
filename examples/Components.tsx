@@ -1,17 +1,17 @@
 import React from 'react';
-import Input from '../packages/ui/components/Input';
-import { H1, H2, H3, H4, P } from '../packages/ui/components/Text';
-import { Box } from '../packages/ui/components/Box';
-import Card from '../packages/ui/components/Card';
-import Autocomplete from '../packages/ui/components/Autocomplete';
-import FetchAutocomplete from '../packages/ui/components/FetchAutocomplete';
-import MenuItem from '../packages/ui/components/AutocompleteMenuItem';
-import Button from '../packages/ui/components/Button';
-import IconButton from '../packages/ui/components/IconButton';
-import Icon from '../packages/ui/components/Icon';
+import Input from '../packages/ui/src/components/Input';
+import { H1, H2, H3, H4, P } from '../packages/ui/src/components/Text';
+import { Box } from '../packages/ui/src/components/Box';
+import Card from '../packages/ui/src/components/Card';
+import Autocomplete from '../packages/ui/src/components/Autocomplete';
+import FetchAutocomplete from '../packages/ui/src/components/FetchAutocomplete';
+import MenuItem from '../packages/ui/src/components/AutocompleteMenuItem';
+import Button from '../packages/ui/src/components/Button';
+import IconButton from '../packages/ui/src/components/IconButton';
+import Icon from '../packages/ui/src/components/Icon';
 import { faFanTable } from '@fortawesome/pro-duotone-svg-icons';
-import Switch from '../packages/ui/components/Switch';
-import { useSchemeContext } from '../packages/ui/context/SchemeContext';
+import Switch from '../packages/ui/src/components/Switch';
+import { useSchemeContext } from '../packages/ui/src/context/SchemeContext';
 
 type Props = {};
 

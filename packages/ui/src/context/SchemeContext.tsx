@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { ColorProps } from '../../../styles/colors';
+import { ColorProps } from '../../../../styles/colors';
 // import useColorScheme, { ColorSchemeProps } from '../hooks/useColorScheme';
-import getColors, { schemes } from '../../../styles/colors';
+import getColors, { schemes } from '../../../../styles/colors';
 
 import { useEffect, useState } from 'react';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Autocomplete from '../packages/ui/components/Autocomplete';
-import MenuItem from '../packages/ui/components/AutocompleteMenuItem';
-import ThemeProvider from '../packages/ui/context/ThemeProvider';
+import Autocomplete from '../packages/ui/src/components/Autocomplete';
+import MenuItem from '../packages/ui/src/components/AutocompleteMenuItem';
+import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Card from '../packages/ui/components/Card';
-import ThemeProvider from '../packages/ui/context/ThemeProvider';
-import Box from '../packages/ui/components/Box';
+import Card from '../packages/ui/src/components/Card';
+import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
+import Box from '../packages/ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Switch from '../packages/ui/components/Switch';
-import ThemeProvider from '../packages/ui/context/ThemeProvider';
+import Switch from '../packages/ui/src/components/Switch';
+import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Input from '../packages/ui/components/Input';
-import ThemeProvider from '../packages/ui/context/ThemeProvider';
-import Box from '../packages/ui/components/Box';
+import Input from '../packages/ui/src/components/Input';
+import ThemeProvider from '../packages/ui/src/context/ThemeProvider';
+import Box from '../packages/ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
