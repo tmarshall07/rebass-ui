@@ -35,10 +35,10 @@ export type ColorSchemeProps = {
   setAuto: (newAuto: boolean) => void;
 };
 
-// The useColorScheme value is always either light or dark, but the built-in
+// The useLightDarkScheme value is always either light or dark, but the built-in
 // type suggests that it can be null. This will not happen in practice, so this
 // makes it a bit easier to work with.
-function useColorScheme(): ColorSchemeProps {
+function useLightDarkScheme(): ColorSchemeProps {
   const [systemScheme, setSystemScheme] = useState<SchemeType>('light');
   const [scheme, setScheme] = useState<SchemeType>('light');
   const [auto, setAuto] = useState(true);
@@ -107,12 +107,16 @@ const SchemeContext = React.createContext<SchemeContextProps>({
 export type SchemeProviderProps = {
   colorSchemes?: SchemeProps;
   theme?: { [index: string]: any };
+  scheme?: string;
   children: React.ReactNode;
 };
 
-export function SchemeProvider({ theme = {}, colorSchemes = {}, children }: SchemeProviderProps) {
-  const colorScheme = useColorScheme();
-  const colors = colorSchemes[colorScheme.scheme];
+export function SchemeProvider({ theme = {}, scheme = '', colorSchemes = {}, children }: SchemeProviderProps) {
+  // Get current light / dark scheme
+  const colorScheme = useLightDarkScheme();
+
+  // Use passed scheme if it exists, otherwise use light / dark, otherwise use first available scheme
+  const colors = colorSchemes[scheme] || colorSchemes[colorScheme.scheme] || colorSchemes[Object.keys(colorSchemes)[0]];
 
   return (
     <SchemeContext.Provider value={{ ...colorScheme, colors }}>

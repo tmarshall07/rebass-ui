@@ -64,35 +64,36 @@ export const lightScheme = {
   white,
 };
 
+export const darkScheme = {
+  text: light,
+  textInvert: dark,
+  primary: lighten(0.3, primary),
+  primaryText: lighten(0.4, primary),
+  'bg-0': darken(0.05, dark),
+  'bg-1': dark,
+  'bg-2': lighten(0.05, dark),
+  'bg-3': lighten(0.1, dark),
+  gray5: lighten(0.05, dark),
+  gray10: lighten(0.1, dark),
+  gray15: lighten(0.15, dark),
+  gray20: lighten(0.2, dark),
+  gray30: lighten(0.3, dark),
+  gray40: lighten(0.4, dark),
+  gray50: lighten(0.5, dark),
+  gray60: lighten(0.6, dark),
+  gray70: lighten(0.7, dark),
+  gray80: lighten(0.8, dark),
+  gray90: lighten(0.9, dark),
+  negative: lighten(0.2, negative),
+  negativeLight: lighten(0.3, negative),
+  warning: lighten(0.15, warning),
+  positive: lighten(0.3, positive),
+  white,
+};
+
 export const schemes: SchemeType = {
   light: lightScheme,
-
-  dark: {
-    text: light,
-    textInvert: dark,
-    primary: lighten(0.3, primary),
-    primaryText: lighten(0.4, primary),
-    'bg-0': darken(0.05, dark),
-    'bg-1': dark,
-    'bg-2': lighten(0.05, dark),
-    'bg-3': lighten(0.1, dark),
-    gray5: lighten(0.05, dark),
-    gray10: lighten(0.1, dark),
-    gray15: lighten(0.15, dark),
-    gray20: lighten(0.2, dark),
-    gray30: lighten(0.3, dark),
-    gray40: lighten(0.4, dark),
-    gray50: lighten(0.5, dark),
-    gray60: lighten(0.6, dark),
-    gray70: lighten(0.7, dark),
-    gray80: lighten(0.8, dark),
-    gray90: lighten(0.9, dark),
-    negative: lighten(0.2, negative),
-    negativeLight: lighten(0.3, negative),
-    warning: lighten(0.15, warning),
-    positive: lighten(0.3, positive),
-    white,
-  },
+  dark: darkScheme,
 };
 
 export function isColor(s: string): s is Color {
