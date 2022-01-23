@@ -9,6 +9,10 @@ import _IconButton from './components/IconButton';
 import _Input from './components/Input';
 import _Switch from './components/Switch';
 import { A as _A, H1 as _H1, H2 as _H2, H3 as _H3, H4 as _H4, P as _P } from './components/Text';
+import _useOutsideClick from './hooks/useClickOutside';
+import _useDebounce from './hooks/useDebounce';
+import _useColors from './hooks/useColors';
+import { useSchemeContext as _useSchemeContext, SchemeProvider as _SchemeProvider } from './context/SchemeContext';
 
 export const Autocomplete = _Autocomplete;
 export const AutocompleteMenuItem = _AutocompleteMenuItem;
@@ -28,3 +32,10 @@ export const H4 = _H4;
 export const A = _A;
 
 export const Debouncer = _Debouncer;
+
+export const useClickOutside = _useOutsideClick;
+export const useColors = _useColors;
+export const useDebounce = _useDebounce;
+export const useSchemeContext = _useSchemeContext;
+
+export const SchemeProvider = _SchemeProvider;
