@@ -1,6 +1,6 @@
 {
   "name": "@tannerjs/scheme-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Reusable UI components and utilities using Rebass and Styled Components",
   "scripts": {
     "build": "rollup -c"

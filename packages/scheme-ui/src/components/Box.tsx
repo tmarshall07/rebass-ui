@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react';
-import { BoxProps, Box as RebassBox, Flex as RebassFlex, FlexProps } from 'rebass/styled-components';
+import { BoxProps as _BoxProps, Box as RebassBox, Flex as RebassFlex, FlexProps } from 'rebass/styled-components';
+
+export type BoxProps = _BoxProps;
 
 export const Box = forwardRef((props: BoxProps, ref) => {
   return <RebassBox color="text" {...props} ref={ref} />;

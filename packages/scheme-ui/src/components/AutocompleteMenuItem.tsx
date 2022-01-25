@@ -1,16 +1,16 @@
 import React from 'react';
 import { SxProps } from 'rebass';
 import { P } from './Text';
-import { Item } from './Autocomplete';
 
 interface Props {
-  onSelect: (item: Item) => void;
   text: string;
+  onSelect?: (item: any) => void;
   sx?: SxProps;
+  focused?: boolean;
 }
 
 const AutocompleteMenuItem = (props: Props) => {
-  const { onSelect, text, sx = {} } = props;
+  const { onSelect, text, focused, sx = {} } = props;
   return (
     <P
       p={2}
@@ -19,6 +19,11 @@ const AutocompleteMenuItem = (props: Props) => {
         ':hover': {
           bg: 'gray10',
         },
+        ...(focused
+          ? {
+              bg: 'gray10',
+            }
+          : {}),
         ...{ sx },
       }}
       onClick={onSelect}

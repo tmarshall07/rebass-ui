@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Autocomplete> = (args) => (
         placeholder="Start typing..."
         items={[{ id: 'Item 1' }, { id: 'Item 2' }, { id: 'Item 3' }]}
         keyExtractor={(item) => item.id}
-        renderItem={(item) => <MenuItem text={item.id} />}
+        renderItem={(item, hasFocus) => <MenuItem focused={hasFocus} text={item.id} />}
         {...args}
       />
     </Box>
