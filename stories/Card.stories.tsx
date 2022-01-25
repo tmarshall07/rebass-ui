@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Card from '../packages/ui/src/components/Card';
-import Box from '../packages/ui/src/components/Box';
-import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import Card from '../packages/scheme-ui/src/components/Card';
+import Box from '../packages/scheme-ui/src/components/Box';
+import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
 import theme from '../styles/theme';
 import { schemes } from '../styles/colors';
 

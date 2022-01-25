@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Box from '../packages/ui/src/components/Box';
-import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import Box from '../packages/scheme-ui/src/components/Box';
+import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
 import theme from '../styles/theme';
 import { schemes } from '../styles/colors';
 

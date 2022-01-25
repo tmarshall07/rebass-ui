@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Input from '../packages/ui/src/components/Input';
+import Input from '../packages/scheme-ui/src/components/Input';
 import { theme } from '../styles/theme';
-import { SchemeProvider, useSchemeContext } from '../packages/ui/src/context/SchemeContext';
+import { SchemeProvider, useSchemeContext } from '../packages/scheme-ui/src/context/SchemeContext';
 import { schemes } from '../styles/colors';
-import Box from '../packages/ui/src/components/Box';
-import { H2 } from '../packages/ui/src';
-import Switch from '../packages/ui/src/components/Switch';
-import { P } from '../packages/ui/src/components/Text';
+import Box from '../packages/scheme-ui/src/components/Box';
+import { H2 } from '../packages/scheme-ui/src';
+import Switch from '../packages/scheme-ui/src/components/Switch';
+import { P } from '../packages/scheme-ui/src/components/Text';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

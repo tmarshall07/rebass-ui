@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/packages/ui/node_modules
+/packages/scheme-ui/node_modules
 /packages/bundler/node_modules
 /.pnp
 .pnp.js
@@ -16,7 +16,7 @@
 
 # production
 /build
-/packages/ui/.rollup.cache
+/packages/scheme-ui/.rollup.cache
 
 # misc
 .DS_Store

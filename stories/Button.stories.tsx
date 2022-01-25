@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Button from '../packages/ui/src/components/Button';
-import IconButton from '../packages/ui/src/components/IconButton';
+import Button from '../packages/scheme-ui/src/components/Button';
+import IconButton from '../packages/scheme-ui/src/components/IconButton';
 import { faCheck } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SchemeProvider } from '../packages/ui/src/context/SchemeContext';
+import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
 import theme from '../styles/theme';
 import { schemes } from '../styles/colors';
-import { Box } from '../packages/ui/src';
+import { Box } from '../packages/scheme-ui/src';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
