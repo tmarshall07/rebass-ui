@@ -16,6 +16,7 @@
 
 # production
 /build
+/packages/ui/.rollup.cache
 
 # misc
 .DS_Store
