@@ -1,6 +1,6 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
+  "name": "@tannerjs/rebass-ui",
+  "version": "0.1.0",
   "description": "Reusable UI components and utilities using Rebass and Styled Components",
   "scripts": {
     "build": "rollup -c"

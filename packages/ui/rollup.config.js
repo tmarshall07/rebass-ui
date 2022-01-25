@@ -42,11 +42,15 @@ const cjs = {
 //   output: { file: `dist/${pkg.name}.js`, format: 'umd', name: pkg.name, globals },
 //   external,
 //   plugins: [
-//     sourceMaps(),
+//     // sourceMaps(),
 //     resolve(),
 //     typescript({ tsconfig: '../../tsconfig.json' }),
 //     replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
 //   ],
 // };
 
-export default [esm, cjs];
+export default [
+  esm,
+  cjs,
+  //  umdDev
+];
