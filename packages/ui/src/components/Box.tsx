@@ -5,7 +5,7 @@ export const Box = forwardRef((props: BoxProps, ref) => {
   return <RebassBox color="text" {...props} ref={ref} />;
 });
 
-Box.displayName = 'Box';
+Box.displayName = 'Box'; 
 
 export const Flex = forwardRef((props: FlexProps, ref) => <RebassFlex color="text" {...props} ref={ref} />);
 
