@@ -1,11 +1,12 @@
 {
   "name": "@tannerjs/scheme-ui",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Reusable UI components and utilities using Rebass and Styled Components",
+  "main": "dist/scheme-ui.cjs.js",
+  "module": "dist/scheme-ui.esm.js",
   "scripts": {
     "build": "rollup -c"
   },
-  "main": "index.js",
   "author": "Tanner Marshall",
   "license": "MIT",
   "dependencies": {

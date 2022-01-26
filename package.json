@@ -2,11 +2,18 @@
   "name": "scheme-ui",
   "homepage": "http://tmarshall07.github.io/scheme-ui",
   "license": "MIT",
+  "private": true,
   "scripts": {
+    "build": "yarn workspace @tannerjs/scheme-ui build && yarn build-storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.15.4",

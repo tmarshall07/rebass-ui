@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
+import pkg from './package.json';
 
 const name = 'scheme-ui';
 const input = './src/index.ts';
@@ -16,22 +17,22 @@ const typescriptPlugin = typescript({ tsconfig: '../../tsconfig.json', outputToF
 const esm = {
   input,
   output: {
-    file: `dist/${name}.esm.js`,
+    file: pkg.module,
     format: 'esm',
   },
   external,
   plugins: [typescriptPlugin, resolve(), minifierPlugin],
 };
 
-// const cjs = {
-//   input,
-//   output: {
-//     file: `dist/${name}.cjs.js`,
-//     format: 'cjs',
-//   },
-//   external,
-//   plugins: [resolve(), typescriptPlugin, minifierPlugin],
-// };
+const cjs = {
+  input,
+  output: {
+    file: pkg.main,
+    format: 'cjs',
+  },
+  external,
+  plugins: [resolve(), typescriptPlugin, minifierPlugin],
+};
 
 // const umdDev = {
 //   input,
@@ -47,6 +48,6 @@ const esm = {
 
 export default [
   esm,
-  // cjs,
+  cjs,
   //  umdDev
 ];
