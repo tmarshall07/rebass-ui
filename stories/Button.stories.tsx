@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
 import theme from '../styles/theme';
 import { schemes } from '../styles/colors';
-import { Box } from '../packages/scheme-ui/src';
+import Box from '../packages/scheme-ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -51,6 +51,17 @@ export const Small = Template.bind({});
 Small.args = {
   size: 's',
   children: 'Small Button',
+};
+
+const StandaloneButtonTemplate: ComponentStory<typeof Button> = (args) => (
+  <Box p={4}>
+    <Button {...args} />
+  </Box>
+);
+
+export const StandaloneButton = StandaloneButtonTemplate.bind({});
+StandaloneButton.args = {
+  children: 'Standalone Button',
 };
 
 const IconButtonTemplate: ComponentStory<typeof Button> = (args) => (

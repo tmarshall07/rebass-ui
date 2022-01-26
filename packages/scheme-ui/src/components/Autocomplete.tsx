@@ -4,7 +4,7 @@ import useClickOutside from '../hooks/useClickOutside';
 import Box, { BoxProps } from './Box';
 import Input from './Input';
 
-type Item = { [index: string]: any };
+export type Item = { [index: string]: any };
 
 export type AutocompleteProps = {
   value: string;

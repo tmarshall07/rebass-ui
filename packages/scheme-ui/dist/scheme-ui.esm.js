@@ -1,0 +1,1 @@
+var t=function(){function t(t,e){void 0===t&&(t=null),void 0===e&&(e=500),this.value=t,this.delay=e,this.timeout=null}return t.prototype.getValue=function(){return this.value},t.prototype.setValue=function(t,e){var i=this;clearTimeout(this.timeout),this.timeout=setTimeout((function(){i.value=t,e(t)}),this.delay)},t}(),e=t;export{e as Debouncer};

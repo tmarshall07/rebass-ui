@@ -64,12 +64,17 @@ const disabled = (isDisabled: boolean, bg: string) => {
   return {};
 };
 
+const defaultColors = {
+  text: '#282C30',
+  gray5: darken(0.05, '#F8F8F8'),
+};
+
 // eslint-disable-next-line complexity
 export default function Button(props: ButtonProps) {
   const {
     children,
     color: colorProp = 'text',
-    bg = 'gray5',
+    bgProp = 'gray5',
     sx,
     startIcon,
     variant,
@@ -80,7 +85,10 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   const colors = useColors();
-  const color = colors[colorProp] || colorProp;
+  const colorsMap = colors || defaultColors;
+
+  const color = colorsMap[colorProp] || colorProp;
+  const bg = colorsMap[bgProp] || bgProp;
 
   return (
     <RebassButton
@@ -97,10 +105,10 @@ export default function Button(props: ButtonProps) {
           outline: 'none',
         },
         ':hover': {
-          bg: darken(0.05, colors[bg]),
+          bg: darken(0.05, bg),
         },
         ':active': {
-          bg: darken(0.1, colors[bg]),
+          bg: darken(0.1, bg),
         },
         ...(size && sizes[size] ? sizes[size] : {}),
         ...(variant === 'outline' && color ? outline(color) : {}),

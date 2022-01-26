@@ -100,7 +100,7 @@ function useLightDarkScheme(): ColorSchemeProps {
 type SchemeContextProps = ColorSchemeProps & { colors: ColorsProps };
 
 const SchemeContext = React.createContext<SchemeContextProps>({
-  colors: {},
+  colors: null,
   scheme: 'light',
 } as SchemeContextProps);
 
