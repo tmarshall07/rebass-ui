@@ -1,6 +1,7 @@
 import useColors from '../hooks/useColors';
 import { transparentize, darken } from 'polished';
 import React from 'react';
+import defaultColors from '../helpers/colors';
 import { Button as RebassButton, ButtonProps as RebassButtonProps, Flex } from 'rebass/styled-components';
 
 export type ButtonProps = RebassButtonProps & {
@@ -62,11 +63,6 @@ const disabled = (isDisabled: boolean, bg: string) => {
     };
 
   return {};
-};
-
-const defaultColors = {
-  text: '#282C30',
-  gray5: darken(0.05, '#F8F8F8'),
 };
 
 // eslint-disable-next-line complexity

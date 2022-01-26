@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
-const name = 'scheme-ui';
 const input = './src/index.ts';
 const external = (id) => !id.startsWith('\0') && !id.startsWith('.') && !id.startsWith('/');
 const minifierPlugin = terser({
@@ -12,7 +11,12 @@ const minifierPlugin = terser({
   },
 });
 
-const typescriptPlugin = typescript({ tsconfig: '../../tsconfig.json', outputToFilesystem: false });
+const typescriptPlugin = typescript({
+  tsconfig: '../../tsconfig.json',
+  outputToFilesystem: false,
+  // declaration: true,
+  // declarationDir: 'dist',
+});
 
 const esm = {
   input,
