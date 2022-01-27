@@ -2,14 +2,14 @@ import React from 'react';
 import { SxProps } from 'rebass';
 import { P } from './Text';
 
-interface Props {
+export type AutocompleteMenuItemProps = {
   text: string;
   onSelect?: (item: any) => void;
   sx?: SxProps;
   focused?: boolean;
-}
+};
 
-const AutocompleteMenuItem = (props: Props) => {
+const AutocompleteMenuItem = (props: AutocompleteMenuItemProps) => {
   const { onSelect, text, focused, sx = {} } = props;
   return (
     <P

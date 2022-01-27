@@ -1,5 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
+import dts from 'rollup-plugin-dts';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json';
 
@@ -12,10 +13,8 @@ const minifierPlugin = terser({
 });
 
 const typescriptPlugin = typescript({
-  tsconfig: '../../tsconfig.json',
+  tsconfig: './tsconfig.build.json',
   outputToFilesystem: false,
-  // declaration: true,
-  // declarationDir: 'dist',
 });
 
 const esm = {
@@ -50,8 +49,16 @@ const cjs = {
 //   ],
 // };
 
+// Export types
+const types = {
+  input: './dist/types/index.d.ts',
+  output: [{ file: 'dist/index.d.ts', format: 'es' }],
+  plugins: [dts()],
+};
+
 export default [
   esm,
   cjs,
+  types,
   //  umdDev
 ];
