@@ -20,6 +20,7 @@ export declare const FetchAutocomplete: (props: import("./components/Autocomplet
 export declare const IconButton: typeof _IconButton;
 export declare const Input: (props: InputProps) => JSX.Element;
 export declare const Switch: (props: any) => JSX.Element;
+export declare const Text: (props: TextProps) => JSX.Element;
 export declare const P: (props: TextProps) => JSX.Element;
 export declare const H1: (props: TextProps) => JSX.Element;
 export declare const H2: (props: TextProps) => JSX.Element;

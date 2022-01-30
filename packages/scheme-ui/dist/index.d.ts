@@ -104,6 +104,7 @@ declare const FetchAutocomplete: (props: AutocompleteProps & {
 declare const IconButton: typeof IconButton$1;
 declare const Input: (props: InputProps) => JSX.Element;
 declare const Switch: (props: any) => JSX.Element;
+declare const Text: (props: TextProps) => JSX.Element;
 declare const P: (props: TextProps) => JSX.Element;
 declare const H1: (props: TextProps) => JSX.Element;
 declare const H2: (props: TextProps) => JSX.Element;
@@ -121,4 +122,4 @@ declare const useSchemeContext: () => ColorSchemeProps & {
 };
 declare const SchemeProvider: typeof SchemeProvider$1;
 
-export { A, Autocomplete, AutocompleteMenuItem, Box, Button, Card, Debouncer, FetchAutocomplete, Flex, H1, H2, H3, H4, IconButton, Input, P, SchemeProvider, Switch, useClickOutside, useColors, useDebounce, useSchemeContext };
+export { A, Autocomplete, AutocompleteMenuItem, Box, Button, Card, Debouncer, FetchAutocomplete, Flex, H1, H2, H3, H4, IconButton, Input, P, SchemeProvider, Switch, Text, useClickOutside, useColors, useDebounce, useSchemeContext };
