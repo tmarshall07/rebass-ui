@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Input from '../packages/scheme-ui/src/components/Input';
 import { theme } from '../styles/theme';
 import { SchemeProvider, useSchemeContext } from '../packages/scheme-ui/src/context/SchemeContext';
 import { schemes } from '../styles/colors';
 import Box from '../packages/scheme-ui/src/components/Box';
-import { H2 } from '../packages/scheme-ui/src';
 import Switch from '../packages/scheme-ui/src/components/Switch';
 import { P } from '../packages/scheme-ui/src/components/Text';
 
@@ -32,9 +30,6 @@ const Component = () => {
           onClick={() => scheme.setScheme(scheme.scheme === 'light' ? 'dark' : 'light')}
           checked={scheme.scheme === 'dark'}
         />
-      </Box>
-      <Box p={2}>
-        <H2>Hello</H2>
       </Box>
     </Box>
   );

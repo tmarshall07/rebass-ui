@@ -13,6 +13,11 @@ yarn storybook
 ```
 
 ### Publishing
+Build the packages:
+```
+cd packages/scheme-ui
+yarn run build
+```
 Build the Storybook static files:
 ```
 yarn run build-storybook
