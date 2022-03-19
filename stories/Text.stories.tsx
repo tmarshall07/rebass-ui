@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
 import theme from '../styles/theme';
 import { schemes } from '../styles/colors';
-import Text, { H1, H2, H3, H4, P } from '../packages/scheme-ui/src/components/Text';
+import { Text, H1, H2, H3, H4, P } from '../packages/scheme-ui/src/components/Text';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
