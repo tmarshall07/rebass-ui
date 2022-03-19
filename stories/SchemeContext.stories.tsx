@@ -6,6 +6,12 @@ import { schemes } from '../styles/colors';
 import Box from '../packages/scheme-ui/src/components/Box';
 import Switch from '../packages/scheme-ui/src/components/Switch';
 import { P } from '../packages/scheme-ui/src/components/Text';
+import { H3 } from '../packages/scheme-ui/src';
+
+const map = {
+  dark: 'Dark',
+  light: 'Light',
+};
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -25,7 +31,7 @@ const Component = () => {
   return (
     <Box p={4} bg="bg-0">
       <Box p={2}>
-        <P mb={2}>{scheme.scheme} scheme active</P>
+        <H3 mb={3}>{map[scheme.scheme]} scheme active</H3>
         <Switch
           onClick={() => scheme.setScheme(scheme.scheme === 'light' ? 'dark' : 'light')}
           checked={scheme.scheme === 'dark'}
