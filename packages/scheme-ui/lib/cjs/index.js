@@ -1,7 +1,5 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -36,6 +34,8 @@ var _useDebounce2 = _interopRequireDefault(require("./hooks/useDebounce"));
 var _useColors2 = _interopRequireDefault(require("./hooks/useColors"));
 
 var _SchemeContext = require("./context/SchemeContext");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Autocomplete = _Autocomplete2["default"];
 exports.Autocomplete = Autocomplete;

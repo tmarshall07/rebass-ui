@@ -71,7 +71,7 @@ function useLightDarkScheme(): ColorSchemeProps {
   };
 
   useEffect(() => {
-    const updateSchemes = (event) => {
+    const updateSchemes = (event: { matches: boolean }) => {
       const newColorScheme = event.matches ? 'dark' : 'light';
       setSystemScheme(newColorScheme);
     };
@@ -102,7 +102,7 @@ type SchemeContextProps = ColorSchemeProps & { colors: ColorsProps };
 const SchemeContext = React.createContext<SchemeContextProps>({
   colors: null,
   scheme: 'light',
-} as SchemeContextProps);
+});
 
 export type SchemeProviderProps = {
   colorSchemes?: SchemeProps;

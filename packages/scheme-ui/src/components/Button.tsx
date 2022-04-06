@@ -1,7 +1,7 @@
+import React from 'react';
 import useColors from '../hooks/useColors';
 import { transparentize, darken } from 'polished';
-import React from 'react';
-import defaultColors from '../helpers/colors';
+import { defaultColors, validateColor } from '../helpers/colors';
 import { Button as RebassButton, ButtonProps as RebassButtonProps, Flex, SxProps } from 'rebass/styled-components';
 
 export type VariantProps = {
@@ -78,8 +78,8 @@ export default function Button(props: ButtonProps) {
   const colors = useColors();
   const colorsMap = colors || defaultColors;
 
-  const color = colorsMap[colorProp] || colorProp;
-  const bg = colorsMap[bgProp] || bgProp;
+  const color = colorsMap[colorProp] || validateColor(colorProp) || defaultColors.text;
+  const bg = colorsMap[bgProp] || validateColor(bgProp) || defaultColors.gray5;
 
   const variants = {
     outline,

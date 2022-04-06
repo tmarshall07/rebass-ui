@@ -1,6 +1,16 @@
 import { darken } from 'polished';
-export default {
+export const defaultColors = {
   text: '#282C30',
   gray5: darken(0.05, '#F8F8F8')
 };
+export function validateColor(strColor) {
+  const s = new Option().style;
+  s.color = strColor;
+
+  if (s.color === strColor) {
+    return strColor;
+  }
+
+  return null;
+}
 //# sourceMappingURL=colors.js.map

@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Debouncer from '../class/debouncer';
 
 // Hook
-function useDebounce(value, delay = 500) {
+function useDebounce(value: any, delay = 500) {
   // State and setters for debounced value
   const [debouncedValue, setDebouncedValue] = useState(value);
   const debouncer = useRef(new Debouncer(value, delay));

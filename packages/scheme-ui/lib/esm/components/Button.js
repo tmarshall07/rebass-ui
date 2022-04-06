@@ -1,8 +1,9 @@
-import _extends from "@babel/runtime/helpers/extends";
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+import React from 'react';
 import useColors from '../hooks/useColors';
 import { transparentize, darken } from 'polished';
-import React from 'react';
-import defaultColors from '../helpers/colors';
+import { defaultColors, validateColor } from '../helpers/colors';
 import { Button as RebassButton, Flex } from 'rebass/styled-components';
 const TRANSPARENCY_HOVER = 0.95;
 const TRANSPARENCY_ACTIVE = 0.92;
@@ -62,8 +63,8 @@ export default function Button(props) {
   } = props;
   const colors = useColors();
   const colorsMap = colors || defaultColors;
-  const color = colorsMap[colorProp] || colorProp;
-  const bg = colorsMap[bgProp] || bgProp;
+  const color = colorsMap[colorProp] || validateColor(colorProp) || defaultColors.text;
+  const bg = colorsMap[bgProp] || validateColor(bgProp) || defaultColors.gray5;
   const variants = {
     outline,
     transparent,

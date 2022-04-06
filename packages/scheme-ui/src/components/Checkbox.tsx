@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Checkbox as _Checkbox, CheckboxProps as _CheckboxProps, Label } from '@rebass/forms';
 import { SxStyleProp } from 'rebass';
-import defaultColors from '../helpers/colors';
+import { defaultColors } from '../helpers/colors';
 
 import Box from './Box';
 import useColors from '../hooks/useColors';

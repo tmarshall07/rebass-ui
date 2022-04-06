@@ -1,29 +1,29 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = Button;
 
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+var _react = _interopRequireDefault(require("react"));
 
 var _useColors = _interopRequireDefault(require("../hooks/useColors"));
 
 var _polished = require("polished");
 
-var _react = _interopRequireDefault(require("react"));
-
-var _colors = _interopRequireDefault(require("../helpers/colors"));
+var _colors = require("../helpers/colors");
 
 var _styledComponents = require("rebass/styled-components");
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var TRANSPARENCY_HOVER = 0.95;
 var TRANSPARENCY_ACTIVE = 0.92;
@@ -88,9 +88,11 @@ function Button(props) {
       _props$enabled = props.enabled,
       enabled = _props$enabled === void 0 ? true : _props$enabled;
   var colors = (0, _useColors["default"])();
-  var colorsMap = colors || _colors["default"];
-  var color = colorsMap[colorProp] || colorProp;
-  var bg = colorsMap[bgProp] || bgProp;
+  var colorsMap = colors || _colors.defaultColors;
+
+  var color = colorsMap[colorProp] || (0, _colors.validateColor)(colorProp) || _colors.defaultColors.text;
+
+  var bg = colorsMap[bgProp] || (0, _colors.validateColor)(bgProp) || _colors.defaultColors.gray5;
 
   var variants = _objectSpread({
     outline: outline,
@@ -99,7 +101,7 @@ function Button(props) {
 
   var isDisabled = !enabled || disabledProp;
   var disabledStyles = disabledSxProp || disabledSx;
-  return /*#__PURE__*/_react["default"].createElement(_styledComponents.Button, (0, _extends2["default"])({
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.Button, _extends({
     disabled: isDisabled,
     variant: variant,
     px: "1em",
