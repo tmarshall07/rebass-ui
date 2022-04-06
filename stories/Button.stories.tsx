@@ -32,6 +32,8 @@ const Template: ComponentStory<typeof Button> = (args) => (
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
+  bg: 'primary',
+  color: 'textInvert',
   children: 'Basic Button',
 };
 
@@ -43,8 +45,14 @@ Outline.args = {
 
 export const Transparent = Template.bind({});
 Transparent.args = {
-  variant: 'Transparent',
+  variant: 'transparent',
   children: 'Transparent Button',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+  children: 'Disabled Button',
 };
 
 export const Small = Template.bind({});

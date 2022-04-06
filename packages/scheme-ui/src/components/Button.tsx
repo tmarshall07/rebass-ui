@@ -2,29 +2,26 @@ import useColors from '../hooks/useColors';
 import { transparentize, darken } from 'polished';
 import React from 'react';
 import defaultColors from '../helpers/colors';
-import { Button as RebassButton, ButtonProps as RebassButtonProps, Flex } from 'rebass/styled-components';
+import { Button as RebassButton, ButtonProps as RebassButtonProps, Flex, SxProps } from 'rebass/styled-components';
+
+export type VariantProps = {
+  [index: string]: (color: string) => SxProps;
+};
 
 export type ButtonProps = RebassButtonProps & {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   children?: React.ReactNode;
   variant?: 'outline' | 'transparent';
+  variants?: VariantProps;
   color?: string;
   bg?: string;
   enabled?: boolean;
-  size?: 's';
-  onClick?: (e: React.MouseEvent) => void;
+  disabledSx?: (bg: string) => SxProps;
 };
 
-const sizes: {
-  [index: string]: { px: string; py: string; fontSize: string };
-} = {
-  s: {
-    px: '0.65em',
-    py: '0.5em',
-    fontSize: '14px',
-  },
-};
+const TRANSPARENCY_HOVER = 0.95;
+const TRANSPARENCY_ACTIVE = 0.92;
 
 const outline = (color: string) => {
   return {
@@ -33,10 +30,10 @@ const outline = (color: string) => {
     border: `1px solid ${transparentize(0.75, color)}`,
 
     ':hover': {
-      bg: color ? transparentize(0.95, color) : transparentize(0.95, 'black'),
+      bg: color ? transparentize(TRANSPARENCY_HOVER, color) : transparentize(TRANSPARENCY_HOVER, 'black'),
     },
     ':active': {
-      bg: color ? transparentize(0.92, color) : transparentize(0.92, 'black'),
+      bg: color ? transparentize(TRANSPARENCY_ACTIVE, color) : transparentize(TRANSPARENCY_ACTIVE, 'black'),
     },
   };
 };
@@ -47,36 +44,34 @@ const transparent = (color: string) => ({
   color,
 
   ':hover': {
-    bg: color ? transparentize(0.9, color) : transparentize(0.9, 'black'),
+    bg: color ? transparentize(TRANSPARENCY_HOVER, color) : transparentize(TRANSPARENCY_HOVER, 'black'),
   },
   ':active': {
-    bg: color ? transparentize(0.85, color) : transparentize(0.85, 'black'),
+    bg: color ? transparentize(TRANSPARENCY_ACTIVE, color) : transparentize(TRANSPARENCY_ACTIVE, 'black'),
   },
 });
 
-const disabled = (isDisabled: boolean, bg: string) => {
+const disabledSx = (bg: string) => {
   const styles = { opacity: 0.5, cursor: 'initial', bg };
-  if (isDisabled)
-    return {
-      ...styles,
-      ':focus,:active,:hover': { ...styles },
-    };
-
-  return {};
+  return {
+    ...styles,
+    ':focus,:active,:hover': { ...styles },
+  };
 };
 
 // eslint-disable-next-line complexity
 export default function Button(props: ButtonProps) {
   const {
-    children,
     color: colorProp = 'text',
-    bgProp = 'gray5',
+    bg: bgProp = 'gray5',
+    variants: variantsProps = {},
+    children,
     sx,
     startIcon,
     variant,
-    size,
-    onClick,
     endIcon,
+    disabledSx: disabledSxProp,
+    disabled: disabledProp = false,
     enabled = true,
   } = props;
 
@@ -86,8 +81,21 @@ export default function Button(props: ButtonProps) {
   const color = colorsMap[colorProp] || colorProp;
   const bg = colorsMap[bgProp] || bgProp;
 
+  const variants = {
+    outline,
+    transparent,
+    ...variantsProps,
+  };
+
+  const isDisabled = !enabled || disabledProp;
+  const disabledStyles = disabledSxProp || disabledSx;
+
   return (
     <RebassButton
+      disabled={isDisabled}
+      variant={variant}
+      px="1em"
+      py="0.5em"
       {...props}
       sx={{
         display: 'flex',
@@ -97,24 +105,22 @@ export default function Button(props: ButtonProps) {
         fontWeight: 'bold',
         color,
         bg,
+        ...sx,
         ':focus': {
           outline: 'none',
+          ...(sx?.[':focus'] || {}),
         },
         ':hover': {
           bg: darken(0.05, bg),
+          ...(sx?.[':hover'] || {}),
         },
         ':active': {
           bg: darken(0.1, bg),
+          ...(sx?.[':active'] || {}),
         },
-        ...(size && sizes[size] ? sizes[size] : {}),
-        ...(variant === 'outline' && color ? outline(color) : {}),
-        ...(variant === 'transparent' && color ? transparent(color) : {}),
-        ...disabled(!enabled, variant === 'outline' ? 'transparent' : bg),
-        ...sx,
+        ...(isDisabled ? disabledStyles(bg) : {}),
+        ...(variants[variant]?.(color) ?? {}),
       }}
-      disabled={!enabled}
-      variant={variant}
-      onClick={onClick}
     >
       {startIcon && (
         <Flex mr={2} alignItems="center">

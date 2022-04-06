@@ -1,10 +1,11 @@
 import typescript from '@rollup/plugin-typescript';
+import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
-import dts from 'rollup-plugin-dts';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
 
+const name = 'scheme-ui';
 const input = './src/index.ts';
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 const external = (id) => !id.startsWith('\0') && !id.startsWith('.') && !id.startsWith('/');
 const minifierPlugin = terser({
   compress: {
@@ -12,53 +13,40 @@ const minifierPlugin = terser({
   },
 });
 
-const typescriptPlugin = typescript({
-  tsconfig: './tsconfig.build.json',
-  outputToFilesystem: false,
-});
+const typescriptPlugin = typescript({ tsconfig: './tsconfig.json' });
 
-const esm = {
+export default {
   input,
-  output: {
-    file: pkg.module,
-    format: 'esm',
-  },
+  output: [
+    {
+      file: `lib/bundles/bundle.esm.js`,
+      format: 'esm',
+      sourcemap: true,
+    },
+    {
+      file: `lib/bundles/bundle.esm.min.js`,
+      format: 'esm',
+      plugins: [minifierPlugin],
+      sourcemap: true,
+    },
+    {
+      file: `lib/bundles/bundle.umd.js`,
+      format: 'umd',
+      name,
+      sourcemap: true,
+    },
+    {
+      file: `lib/bundles/bundle.umd.min.js`,
+      format: 'umd',
+      name,
+      plugins: [minifierPlugin],
+      sourcemap: true,
+    },
+  ],
   external,
-  plugins: [typescriptPlugin, resolve(), minifierPlugin],
+  plugins: [
+    typescriptPlugin,
+    resolve({ extensions }),
+    babel({ babelHelpers: 'bundled', include: ['src/**/*.ts'], extensions, exclude: './node_modules/**' }),
+  ],
 };
-
-const cjs = {
-  input,
-  output: {
-    file: pkg.main,
-    format: 'cjs',
-  },
-  external,
-  plugins: [resolve(), typescriptPlugin, minifierPlugin],
-};
-
-// const umdDev = {
-//   input,
-//   output: { file: `dist/${name}.js`, format: 'umd', name: name, globals },
-//   external,
-//   plugins: [
-//     // sourceMaps(),
-//     resolve(),
-//     typescript({ tsconfig: '../../tsconfig.json' }),
-//     replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),
-//   ],
-// };
-
-// Export types
-const types = {
-  input: './dist/types/index.d.ts',
-  output: [{ file: 'dist/index.d.ts', format: 'es' }],
-  plugins: [dts()],
-};
-
-export default [
-  esm,
-  cjs,
-  types,
-  //  umdDev
-];

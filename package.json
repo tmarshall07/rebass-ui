@@ -10,11 +10,6 @@
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.15.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

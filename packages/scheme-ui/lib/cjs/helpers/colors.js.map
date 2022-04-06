@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/helpers/colors.ts"],"names":["text","gray5"],"mappings":";;;;;;;AAAA;;eAEe;AACbA,EAAAA,IAAI,EAAE,SADO;AAEbC,EAAAA,KAAK,EAAE,sBAAO,IAAP,EAAa,SAAb;AAFM,C","sourcesContent":["import { darken } from 'polished';\n\nexport default {\n  text: '#282C30',\n  gray5: darken(0.05, '#F8F8F8'),\n};\n"],"file":"colors.js"}
