@@ -1,1 +1,0 @@
-{"version":3,"file":"debouncer.d.ts","sourceRoot":"","sources":["../../../src/class/debouncer.ts"],"names":[],"mappings":"AAAA,cAAM,SAAS;IACb,OAAO,EAAE,UAAU,CAAC,OAAO,UAAU,CAAC,CAAC;IAEvC,KAAK,EAAE,MAAM,CAAC;IAEd,KAAK,EAAE,GAAG,CAAC;gBAEC,YAAY,OAAO,EAAE,KAAK,SAAM;IAM5C,QAAQ;IAIR,QAAQ,CAAC,QAAQ,KAAA,EAAE,QAAQ,KAAA;CAQ5B;AAED,eAAe,SAAS,CAAC"}
