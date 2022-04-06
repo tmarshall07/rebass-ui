@@ -27,6 +27,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -142,11 +144,21 @@ var Autocomplete = function Autocomplete(props) {
     setFocusedIndex(newFocusedIndex);
   };
 
-  return <_Box.default sx={{
-    position: 'relative'
-  }} ref={containerRef}>
-      <_Input.default placeholder={placeholder} value={value} onChange={onChange} onFocus={handleFocus} onKeyDown={handleKeyDown} {...inputProps} />
-      {menuVisible && !!items.length && <_Box.default ref={menuRef} {...menuProps} sx={_objectSpread({
+  return /*#__PURE__*/_react["default"].createElement(_Box["default"], {
+    sx: {
+      position: 'relative'
+    },
+    ref: containerRef
+  }, /*#__PURE__*/_react["default"].createElement(_Input["default"], _extends({
+    placeholder: placeholder,
+    value: value,
+    onChange: onChange,
+    onFocus: handleFocus,
+    onKeyDown: handleKeyDown
+  }, inputProps)), menuVisible && !!items.length && /*#__PURE__*/_react["default"].createElement(_Box["default"], _extends({
+    ref: menuRef
+  }, menuProps, {
+    sx: _objectSpread({
       position: 'absolute',
       bg: 'bg-2',
       maxHeight: 300,
@@ -159,16 +171,15 @@ var Autocomplete = function Autocomplete(props) {
       borderStyle: 'solid',
       borderColor: 'gray5',
       borderWidth: 1
-    }, (menuProps === null || menuProps === void 0 ? void 0 : menuProps.sx) || {})}>
-          {items.map(function (item, i) {
-        return <_Box.default onClick={function () {
-          return handleSelect(item);
-        }} key={keyExtractor(item)}>
-              {renderItem(item, i === focusedIndex)}
-            </_Box.default>;
-      })}
-        </_Box.default>}
-    </_Box.default>;
+    }, (menuProps === null || menuProps === void 0 ? void 0 : menuProps.sx) || {})
+  }), items.map(function (item, i) {
+    return /*#__PURE__*/_react["default"].createElement(_Box["default"], {
+      onClick: function onClick() {
+        return handleSelect(item);
+      },
+      key: keyExtractor(item)
+    }, renderItem(item, i === focusedIndex));
+  })));
 };
 
 var _default = Autocomplete;

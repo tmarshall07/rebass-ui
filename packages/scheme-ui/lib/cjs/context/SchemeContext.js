@@ -169,7 +169,7 @@ function useLightDarkScheme() {
   };
 }
 
-var SchemeContext = _react["default"].createContext({
+var SchemeContext = /*#__PURE__*/_react["default"].createContext({
   colors: null,
   scheme: 'light'
 });
@@ -186,13 +186,15 @@ function SchemeProvider(_ref3) {
   var colorScheme = useLightDarkScheme(); // Use passed scheme if it exists, otherwise use light / dark, otherwise use first available scheme
 
   var colors = colorSchemes[scheme] || colorSchemes[colorScheme.scheme] || colorSchemes[Object.keys(colorSchemes)[0]];
-  return <SchemeContext.Provider value={_objectSpread(_objectSpread({}, colorScheme), {}, {
-    colors: colors
-  })}>
-      <_styledComponents.ThemeProvider theme={_objectSpread(_objectSpread({}, theme), {}, {
+  return /*#__PURE__*/_react["default"].createElement(SchemeContext.Provider, {
+    value: _objectSpread(_objectSpread({}, colorScheme), {}, {
       colors: colors
-    })}>{children}</_styledComponents.ThemeProvider>
-    </SchemeContext.Provider>;
+    })
+  }, /*#__PURE__*/_react["default"].createElement(_styledComponents.ThemeProvider, {
+    theme: _objectSpread(_objectSpread({}, theme), {}, {
+      colors: colors
+    })
+  }, children));
 }
 
 var useSchemeContext = function useSchemeContext() {

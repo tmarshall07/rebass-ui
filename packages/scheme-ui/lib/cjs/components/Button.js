@@ -17,6 +17,8 @@ var _styledComponents = require("rebass/styled-components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -97,32 +99,37 @@ function Button(props) {
 
   var isDisabled = !enabled || disabledProp;
   var disabledStyles = disabledSxProp || disabledSx;
-  return <_styledComponents.Button disabled={isDisabled} variant={variant} px="1em" py="0.5em" {...props} sx={_objectSpread(_objectSpread(_objectSpread({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    fontWeight: 'bold',
-    color: color,
-    bg: bg
-  }, sx), {}, {
-    ':focus': _objectSpread({
-      outline: 'none'
-    }, (sx === null || sx === void 0 ? void 0 : sx[':focus']) || {}),
-    ':hover': _objectSpread({
-      bg: (0, _polished.darken)(0.05, bg)
-    }, (sx === null || sx === void 0 ? void 0 : sx[':hover']) || {}),
-    ':active': _objectSpread({
-      bg: (0, _polished.darken)(0.1, bg)
-    }, (sx === null || sx === void 0 ? void 0 : sx[':active']) || {})
-  }, isDisabled ? disabledStyles(bg) : {}), (_variants$variant = (_variants$variant2 = variants[variant]) === null || _variants$variant2 === void 0 ? void 0 : _variants$variant2.call(variants, color)) !== null && _variants$variant !== void 0 ? _variants$variant : {})}>
-      {startIcon && <_styledComponents.Flex mr={2} alignItems="center">
-          {startIcon}
-        </_styledComponents.Flex>}
-      {children}
-      {endIcon && <_styledComponents.Flex ml={2} alignItems="center">
-          {endIcon}
-        </_styledComponents.Flex>}
-    </_styledComponents.Button>;
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.Button, _extends({
+    disabled: isDisabled,
+    variant: variant,
+    px: "1em",
+    py: "0.5em"
+  }, props, {
+    sx: _objectSpread(_objectSpread(_objectSpread({
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+      fontWeight: 'bold',
+      color: color,
+      bg: bg
+    }, sx), {}, {
+      ':focus': _objectSpread({
+        outline: 'none'
+      }, (sx === null || sx === void 0 ? void 0 : sx[':focus']) || {}),
+      ':hover': _objectSpread({
+        bg: (0, _polished.darken)(0.05, bg)
+      }, (sx === null || sx === void 0 ? void 0 : sx[':hover']) || {}),
+      ':active': _objectSpread({
+        bg: (0, _polished.darken)(0.1, bg)
+      }, (sx === null || sx === void 0 ? void 0 : sx[':active']) || {})
+    }, isDisabled ? disabledStyles(bg) : {}), (_variants$variant = (_variants$variant2 = variants[variant]) === null || _variants$variant2 === void 0 ? void 0 : _variants$variant2.call(variants, color)) !== null && _variants$variant !== void 0 ? _variants$variant : {})
+  }), startIcon && /*#__PURE__*/_react["default"].createElement(_styledComponents.Flex, {
+    mr: 2,
+    alignItems: "center"
+  }, startIcon), children, endIcon && /*#__PURE__*/_react["default"].createElement(_styledComponents.Flex, {
+    ml: 2,
+    alignItems: "center"
+  }, endIcon));
 }
 //# sourceMappingURL=Button.js.map

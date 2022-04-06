@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import React, { useEffect, useRef, useState } from 'react';
 import useClickOutside from '../hooks/useClickOutside';
 import Box from './Box';
@@ -92,11 +94,21 @@ const Autocomplete = props => {
     setFocusedIndex(newFocusedIndex);
   };
 
-  return <Box sx={{
-    position: 'relative'
-  }} ref={containerRef}>
-      <Input placeholder={placeholder} value={value} onChange={onChange} onFocus={handleFocus} onKeyDown={handleKeyDown} {...inputProps} />
-      {menuVisible && !!items.length && <Box ref={menuRef} {...menuProps} sx={{
+  return /*#__PURE__*/React.createElement(Box, {
+    sx: {
+      position: 'relative'
+    },
+    ref: containerRef
+  }, /*#__PURE__*/React.createElement(Input, _extends({
+    placeholder: placeholder,
+    value: value,
+    onChange: onChange,
+    onFocus: handleFocus,
+    onKeyDown: handleKeyDown
+  }, inputProps)), menuVisible && !!items.length && /*#__PURE__*/React.createElement(Box, _extends({
+    ref: menuRef
+  }, menuProps, {
+    sx: {
       position: 'absolute',
       bg: 'bg-2',
       maxHeight: 300,
@@ -110,12 +122,11 @@ const Autocomplete = props => {
       borderColor: 'gray5',
       borderWidth: 1,
       ...(menuProps?.sx || {})
-    }}>
-          {items.map((item, i) => <Box onClick={() => handleSelect(item)} key={keyExtractor(item)}>
-              {renderItem(item, i === focusedIndex)}
-            </Box>)}
-        </Box>}
-    </Box>;
+    }
+  }), items.map((item, i) => /*#__PURE__*/React.createElement(Box, {
+    onClick: () => handleSelect(item),
+    key: keyExtractor(item)
+  }, renderItem(item, i === focusedIndex)))));
 };
 
 export default Autocomplete;

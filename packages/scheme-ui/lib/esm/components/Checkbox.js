@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import React from 'react';
 import { Checkbox as _Checkbox, Label } from '@rebass/forms';
 import defaultColors from '../helpers/colors';
@@ -14,32 +16,31 @@ export default function Checkbox(props) {
   const colors = useColors();
   const colorsMap = colors || defaultColors;
   const color = colorsMap[colorProp] || colorProp;
-  const checkbox = <Box // NOTE: The absolute positioning of the checkbox element causes it to be placed below the overflow container
+  const checkbox = /*#__PURE__*/React.createElement(Box // NOTE: The absolute positioning of the checkbox element causes it to be placed below the overflow container
   // PR filed with the rebassjs repo
-  sx={{
-    input: {
-      position: 'fixed'
-    },
-    'svg path': {
-      color: checked ? color : colors.text
+  , {
+    sx: {
+      input: {
+        position: 'fixed'
+      },
+      'svg path': {
+        color: checked ? color : colors.text
+      }
     }
-  }}>
-      <_Checkbox {...props} sx={{
+  }, /*#__PURE__*/React.createElement(_Checkbox, _extends({}, props, {
+    sx: {
       ':focus': {
         color
       },
       ...sx
-    }} />
-    </Box>;
-  return <>
-      <Label sx={{
+    }
+  })));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Label, {
+    sx: {
       display: 'flex',
       alignItems: 'center',
       ...labelSx
-    }}>
-        {checkbox}
-        {label}
-      </Label>
-    </>;
+    }
+  }, checkbox, label));
 }
 //# sourceMappingURL=Checkbox.js.map

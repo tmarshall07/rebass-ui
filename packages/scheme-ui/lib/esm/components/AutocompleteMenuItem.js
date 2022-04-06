@@ -8,20 +8,22 @@ const AutocompleteMenuItem = props => {
     focused,
     sx = {}
   } = props;
-  return <P p={2} sx={{
-    cursor: 'pointer',
-    ':hover': {
-      bg: 'gray10'
+  return /*#__PURE__*/React.createElement(P, {
+    p: 2,
+    sx: {
+      cursor: 'pointer',
+      ':hover': {
+        bg: 'gray10'
+      },
+      ...(focused ? {
+        bg: 'gray10'
+      } : {}),
+      ...{
+        sx
+      }
     },
-    ...(focused ? {
-      bg: 'gray10'
-    } : {}),
-    ...{
-      sx
-    }
-  }} onClick={onSelect}>
-      {text}
-    </P>;
+    onClick: onSelect
+  }, text);
 };
 
 export default AutocompleteMenuItem;

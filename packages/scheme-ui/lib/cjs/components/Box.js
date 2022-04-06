@@ -15,13 +15,23 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var Box = (0, _react.forwardRef)(function (props, ref) {
-  return <_styledComponents.Box color="text" {...props} ref={ref} />;
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var Box = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.Box, _extends({
+    color: "text"
+  }, props, {
+    ref: ref
+  }));
 });
 exports.Box = Box;
 Box.displayName = 'Box';
-var Flex = (0, _react.forwardRef)(function (props, ref) {
-  return <_styledComponents.Flex color="text" {...props} ref={ref} />;
+var Flex = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+  return /*#__PURE__*/_react["default"].createElement(_styledComponents.Flex, _extends({
+    color: "text"
+  }, props, {
+    ref: ref
+  }));
 });
 exports.Flex = Flex;
 Flex.displayName = 'Flex';

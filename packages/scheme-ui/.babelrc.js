@@ -1,4 +1,4 @@
-const sharedPresets = ['@babel/preset-typescript'];
+const sharedPresets = ['@babel/preset-typescript', '@babel/preset-react'];
 const shared = {
   ignore: ['src/**/*.spec.ts'],
   presets: sharedPresets

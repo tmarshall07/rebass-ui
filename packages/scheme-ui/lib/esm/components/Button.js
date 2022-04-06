@@ -1,3 +1,5 @@
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 import useColors from '../hooks/useColors';
 import { transparentize, darken } from 'polished';
 import React from 'react';
@@ -70,37 +72,42 @@ export default function Button(props) {
   };
   const isDisabled = !enabled || disabledProp;
   const disabledStyles = disabledSxProp || disabledSx;
-  return <RebassButton disabled={isDisabled} variant={variant} px="1em" py="0.5em" {...props} sx={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    fontWeight: 'bold',
-    color,
-    bg,
-    ...sx,
-    ':focus': {
-      outline: 'none',
-      ...(sx?.[':focus'] || {})
-    },
-    ':hover': {
-      bg: darken(0.05, bg),
-      ...(sx?.[':hover'] || {})
-    },
-    ':active': {
-      bg: darken(0.1, bg),
-      ...(sx?.[':active'] || {})
-    },
-    ...(isDisabled ? disabledStyles(bg) : {}),
-    ...(variants[variant]?.(color) ?? {})
-  }}>
-      {startIcon && <Flex mr={2} alignItems="center">
-          {startIcon}
-        </Flex>}
-      {children}
-      {endIcon && <Flex ml={2} alignItems="center">
-          {endIcon}
-        </Flex>}
-    </RebassButton>;
+  return /*#__PURE__*/React.createElement(RebassButton, _extends({
+    disabled: isDisabled,
+    variant: variant,
+    px: "1em",
+    py: "0.5em"
+  }, props, {
+    sx: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+      fontWeight: 'bold',
+      color,
+      bg,
+      ...sx,
+      ':focus': {
+        outline: 'none',
+        ...(sx?.[':focus'] || {})
+      },
+      ':hover': {
+        bg: darken(0.05, bg),
+        ...(sx?.[':hover'] || {})
+      },
+      ':active': {
+        bg: darken(0.1, bg),
+        ...(sx?.[':active'] || {})
+      },
+      ...(isDisabled ? disabledStyles(bg) : {}),
+      ...(variants[variant]?.(color) ?? {})
+    }
+  }), startIcon && /*#__PURE__*/React.createElement(Flex, {
+    mr: 2,
+    alignItems: "center"
+  }, startIcon), children, endIcon && /*#__PURE__*/React.createElement(Flex, {
+    ml: 2,
+    alignItems: "center"
+  }, endIcon));
 }
 //# sourceMappingURL=Button.js.map

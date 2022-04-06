@@ -68,7 +68,7 @@ function useLightDarkScheme() {
   };
 }
 
-const SchemeContext = React.createContext({
+const SchemeContext = /*#__PURE__*/React.createContext({
   colors: null,
   scheme: 'light'
 });
@@ -82,13 +82,15 @@ export function SchemeProvider({
   const colorScheme = useLightDarkScheme(); // Use passed scheme if it exists, otherwise use light / dark, otherwise use first available scheme
 
   const colors = colorSchemes[scheme] || colorSchemes[colorScheme.scheme] || colorSchemes[Object.keys(colorSchemes)[0]];
-  return <SchemeContext.Provider value={{ ...colorScheme,
-    colors
-  }}>
-      <ThemeProvider theme={{ ...theme,
+  return /*#__PURE__*/React.createElement(SchemeContext.Provider, {
+    value: { ...colorScheme,
       colors
-    }}>{children}</ThemeProvider>
-    </SchemeContext.Provider>;
+    }
+  }, /*#__PURE__*/React.createElement(ThemeProvider, {
+    theme: { ...theme,
+      colors
+    }
+  }, children));
 }
 export const useSchemeContext = () => useContext(SchemeContext);
 //# sourceMappingURL=SchemeContext.js.map

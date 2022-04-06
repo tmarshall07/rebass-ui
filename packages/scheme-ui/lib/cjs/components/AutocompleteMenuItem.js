@@ -23,18 +23,20 @@ var AutocompleteMenuItem = function AutocompleteMenuItem(props) {
       focused = props.focused,
       _props$sx = props.sx,
       sx = _props$sx === void 0 ? {} : _props$sx;
-  return <_Text.P p={2} sx={_objectSpread(_objectSpread({
-    cursor: 'pointer',
-    ':hover': {
+  return /*#__PURE__*/_react["default"].createElement(_Text.P, {
+    p: 2,
+    sx: _objectSpread(_objectSpread({
+      cursor: 'pointer',
+      ':hover': {
+        bg: 'gray10'
+      }
+    }, focused ? {
       bg: 'gray10'
-    }
-  }, focused ? {
-    bg: 'gray10'
-  } : {}), {
-    sx: sx
-  })} onClick={onSelect}>
-      {text}
-    </_Text.P>;
+    } : {}), {
+      sx: sx
+    }),
+    onClick: onSelect
+  }, text);
 };
 
 var _default = AutocompleteMenuItem;
