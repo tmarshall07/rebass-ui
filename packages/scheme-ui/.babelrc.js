@@ -5,7 +5,7 @@ const shared = {
 }
 
 module.exports = {
-  // plugins: ["@babel/plugin-transform-runtime"],
+  plugins: ["@babel/plugin-transform-runtime"],
   env: {
     esmUnbundled: shared,
     esmBundled: {
