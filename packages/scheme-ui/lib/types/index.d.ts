@@ -18,7 +18,7 @@ export declare const FetchAutocomplete: (props: import("./components/Autocomplet
     request: (value: string) => Promise<any>;
 }) => JSX.Element;
 export declare const IconButton: typeof _IconButton;
-export declare const Input: (props: InputProps) => JSX.Element;
+export declare const Input: import("react").ForwardRefExoticComponent<Pick<any, string | number | symbol> & import("react").RefAttributes<unknown>>;
 export declare const Switch: (props: any) => JSX.Element;
 export declare const Text: (props: TextProps) => JSX.Element;
 export declare const P: (props: TextProps) => JSX.Element;

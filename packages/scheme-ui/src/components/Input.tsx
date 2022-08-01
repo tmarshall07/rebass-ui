@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Input as _Input, InputProps } from '@rebass/forms/styled-components';
 
-const Input = (props: InputProps) => (
+const Input = forwardRef((props: InputProps, ref) => (
   <_Input
     {...props}
+    ref={ref}
     sx={{
       borderRadius: 3,
       borderColor: 'transparent',
@@ -13,6 +14,8 @@ const Input = (props: InputProps) => (
       ...(props.sx || {}),
     }}
   />
-);
+));
+
+Input.displayName = 'Input';
 
 export default Input;
