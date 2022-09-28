@@ -15,13 +15,13 @@ var defaultColors = {
 exports.defaultColors = defaultColors;
 
 function validateColor(strColor) {
-  var s = new Option().style;
-  s.color = strColor;
-
-  if (s.color === strColor) {
-    return strColor;
+  // Guard invalid colors
+  try {
+    (0, _polished.parseToRgb)(strColor);
+  } catch (e) {
+    return null;
   }
 
-  return null;
+  return strColor;
 }
 //# sourceMappingURL=colors.js.map
