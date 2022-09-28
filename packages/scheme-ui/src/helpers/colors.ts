@@ -1,4 +1,4 @@
-import { darken } from 'polished';
+import { darken, parseToRgb } from 'polished';
 
 export const defaultColors = {
   text: '#282C30',
@@ -6,12 +6,12 @@ export const defaultColors = {
 };
 
 export function validateColor(strColor: string): string | null {
-  const s = new Option().style;
-  s.color = strColor;
-
-  if (s.color === strColor) {
-    return strColor;
+  // Guard invalid colors
+  try {
+    parseToRgb(strColor);
+  } catch (e) {
+    return null;
   }
 
-  return null;
+  return strColor;
 }
