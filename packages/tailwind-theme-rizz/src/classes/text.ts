@@ -1,3 +1,14 @@
+const sharedClasses = ['dark:text-slate-100'];
+const sharedHeadingClasses = [...sharedClasses, 'font-bold', 'text-slate-800'];
+
+export const baseH1 = ['sm:text-4xl text-3xl', ...sharedHeadingClasses];
+export const baseH2 = ['sm:text-3xl text-2xl', ...sharedHeadingClasses];
+export const baseH3 = ['sm:text-2xl text-xl', ...sharedHeadingClasses];
+export const baseH4 = ['sm:text-xl text-lg', ...sharedHeadingClasses];
+export const baseH5 = ['sm:text-lg text-base', ...sharedHeadingClasses];
+
+export const baseP = ['font-paragraph sm:text-base text-sm', ...sharedClasses];
+
 export const colorBase300 = 'text-slate-300 dark:text-slate-700';
 export const colorBase400 = 'text-slate-400 dark:text-slate-600';
 export const colorBase500 = 'text-slate-500 dark:text-slate-500';

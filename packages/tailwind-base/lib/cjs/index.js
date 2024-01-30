@@ -36,4 +36,15 @@ Object.keys(_Button).forEach(function (key) {
     }
   });
 });
+var _Text = require("./base/Text");
+Object.keys(_Text).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Text[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _Text[key];
+    }
+  });
+});
 //# sourceMappingURL=index.js.map

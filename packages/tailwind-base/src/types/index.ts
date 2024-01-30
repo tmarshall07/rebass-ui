@@ -15,3 +15,10 @@ export type ThemePairings<TTheme extends ComponentThemeType> = {
   };
   // access by keyof icon to flatten the map into a union
 }[keyof TTheme];
+
+export type SharedProps = {
+  theme: ComponentThemeType;
+  variant?: string;
+  color?: string;
+  cn?: string;
+};
