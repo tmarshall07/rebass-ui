@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, forwardRef } from 'react';
-import { merge } from '../utils';
+import { getDefaultVariant, merge } from '../utils';
 import { ComponentThemeType, ThemePairings } from '../types';
 
 type BaseProps = PropsWithChildren &
@@ -20,7 +20,7 @@ export type ThemeButtonProps<TTheme extends ComponentThemeType> = Omit<ButtonPro
 export const BaseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { cn = '', className, disabled, rounded = false, variant, theme, color, ...rest } = props;
 
-  const classes = theme[variant || '']?.colors[color || ''] || [];
+  const classes = getDefaultVariant(theme, variant, color);
 
   if (rounded) classes.push('rounded-full');
 

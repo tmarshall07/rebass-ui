@@ -1,6 +1,6 @@
 {
   "name": "@tannerjs/tailwind-base",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Base components for reusable tailwind themes.",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",

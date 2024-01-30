@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, forwardRef } from 'react';
 import { ComponentThemeType, SharedProps, ThemePairings } from '../types';
-import { merge } from '../utils';
+import { getDefaultVariant, merge } from '../utils';
 
 export type BaseHeadingProps = PropsWithChildren &
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
@@ -10,7 +10,7 @@ export type ThemeHeadingProps<TTheme extends ComponentThemeType> = Omit<HeadingP
 
 const getClassesFromProps = (props: HeadingProps) => {
   const { theme, variant, color, cn, className } = props;
-  const classes = theme[variant || '']?.colors[color || ''] || [];
+  const classes = getDefaultVariant(theme, variant, color);
   return merge(classes, cn, className);
 };
 

@@ -1,6 +1,6 @@
 import _extends from "@babel/runtime/helpers/extends";
 import React, { forwardRef } from 'react';
-import { merge } from '../utils';
+import { getDefaultVariant, merge } from '../utils';
 const getClassesFromProps = props => {
   const {
     theme,
@@ -9,7 +9,7 @@ const getClassesFromProps = props => {
     cn,
     className
   } = props;
-  const classes = theme[variant || '']?.colors[color || ''] || [];
+  const classes = getDefaultVariant(theme, variant, color);
   return merge(classes, cn, className);
 };
 export const H1 = /*#__PURE__*/forwardRef((props, ref) => {
