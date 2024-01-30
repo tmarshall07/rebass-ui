@@ -1,7 +1,11 @@
 {
   "name": "@tannerjs/tailwind-base",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Base components for reusable tailwind themes.",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "author": "Tanner Marshall",
   "license": "MIT",
   "dependencies": {
     "clsx": "^2.1.0",
