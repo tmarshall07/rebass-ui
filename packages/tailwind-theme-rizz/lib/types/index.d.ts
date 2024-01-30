@@ -1,3 +1,4 @@
+export * from './classes';
 export * from './Button';
 export declare const theme: {
     button: {
