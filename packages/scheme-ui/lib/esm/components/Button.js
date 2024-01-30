@@ -6,7 +6,6 @@ import { defaultColors, validateColor } from '../helpers/colors';
 import { Button as RebassButton, Flex } from 'rebass/styled-components';
 const TRANSPARENCY_HOVER = 0.95;
 const TRANSPARENCY_ACTIVE = 0.92;
-
 const outline = color => {
   return {
     bg: 'transparent',
@@ -20,7 +19,6 @@ const outline = color => {
     }
   };
 };
-
 const transparent = color => ({
   bg: 'transparent',
   boxShadow: 'none',
@@ -32,20 +30,21 @@ const transparent = color => ({
     bg: color ? transparentize(TRANSPARENCY_ACTIVE, color) : transparentize(TRANSPARENCY_ACTIVE, 'black')
   }
 });
-
 const disabledSx = bg => {
   const styles = {
     opacity: 0.5,
     cursor: 'initial',
     bg
   };
-  return { ...styles,
-    ':focus,:active,:hover': { ...styles
+  return {
+    ...styles,
+    ':focus,:active,:hover': {
+      ...styles
     }
   };
-}; // eslint-disable-next-line complexity
+};
 
-
+// eslint-disable-next-line complexity
 export default function Button(props) {
   const {
     color: colorProp = 'text',

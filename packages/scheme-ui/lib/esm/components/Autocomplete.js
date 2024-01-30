@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import useClickOutside from '../hooks/useClickOutside';
 import Box from './Box';
 import Input from './Input';
-
 /**
  * Update the scroll to show more items as the user arrows up or down
  *
@@ -12,16 +11,13 @@ import Input from './Input';
  */
 const updateScroll = (el, index) => {
   const parent = el;
-
   if (parent?.children) {
     const child = parent.children[index];
-
     if (child) {
       const childOffsetTop = child.offsetTop;
       const parentScrollTop = parent.scrollTop;
       const parentHeight = parent.offsetHeight;
       const childHeight = child.offsetHeight;
-
       if (childOffsetTop + childHeight > parentHeight + parentScrollTop) {
         const scrollToY = childOffsetTop + childHeight - parentHeight;
         parent.scrollTo(0, scrollToY);
@@ -31,7 +27,6 @@ const updateScroll = (el, index) => {
     }
   }
 };
-
 const Autocomplete = props => {
   const {
     value,
@@ -46,53 +41,45 @@ const Autocomplete = props => {
   } = props;
   const menuRef = useRef();
   const [menuVisible, setMenuVisible] = useState(false);
-  const [focusedIndex, setFocusedIndex] = useState(0); // Handle using arrows to scroll up and down
+  const [focusedIndex, setFocusedIndex] = useState(0);
 
+  // Handle using arrows to scroll up and down
   useEffect(() => {
     updateScroll(menuRef.current, focusedIndex);
   }, [focusedIndex]);
   const containerRef = useRef();
   useClickOutside(containerRef, () => setMenuVisible(false));
-
   const handleSelect = item => {
     setMenuVisible(false);
     onSelect(item);
   };
-
   const handleFocus = e => {
     setMenuVisible(true);
     inputProps.onFocus?.(e);
   };
-
   const handleKeyDown = e => {
     let newFocusedIndex = focusedIndex;
-
     switch (e.key) {
       case 'ArrowUp':
         // Up
         e.preventDefault();
         if (!(focusedIndex - 1 < 0)) newFocusedIndex -= 1;
         break;
-
       case 'ArrowDown':
         // Down
         e.preventDefault();
         if (!(focusedIndex + 1 >= items.length)) newFocusedIndex += 1;
         break;
-
       case 'Enter':
         // Enter
         e.preventDefault();
         handleSelect(items[focusedIndex]);
         break;
-
       default:
         break;
     }
-
     setFocusedIndex(newFocusedIndex);
   };
-
   return /*#__PURE__*/React.createElement(Box, {
     sx: {
       position: 'relative'
@@ -127,6 +114,5 @@ const Autocomplete = props => {
     key: keyExtractor(item)
   }, renderItem(item, i === focusedIndex)))));
 };
-
 export default Autocomplete;
 //# sourceMappingURL=Autocomplete.js.map

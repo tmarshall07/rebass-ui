@@ -1,7 +1,6 @@
 import _extends from "@babel/runtime/helpers/extends";
 import React from 'react';
 import Box from './Box';
-
 const Card = props => {
   const {
     boxShadow = 'large'
@@ -18,6 +17,5 @@ const Card = props => {
     }
   }));
 };
-
 export default Card;
 //# sourceMappingURL=Card.js.map

@@ -1,6 +1,5 @@
 import React from 'react';
 import { P } from './Text';
-
 const AutocompleteMenuItem = props => {
   const {
     onSelect,
@@ -25,6 +24,5 @@ const AutocompleteMenuItem = props => {
     onClick: onSelect
   }, text);
 };
-
 export default AutocompleteMenuItem;
 //# sourceMappingURL=AutocompleteMenuItem.js.map

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
-import Debouncer from '../class/debouncer'; // Hook
+import Debouncer from '../class/debouncer';
 
+// Hook
 function useDebounce(value, delay = 500) {
   // State and setters for debounced value
   const [debouncedValue, setDebouncedValue] = useState(value);
@@ -13,6 +14,5 @@ function useDebounce(value, delay = 500) {
   );
   return debouncedValue;
 }
-
 export default useDebounce;
 //# sourceMappingURL=useDebounce.js.map

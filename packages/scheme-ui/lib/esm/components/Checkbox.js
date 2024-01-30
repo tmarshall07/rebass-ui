@@ -15,7 +15,8 @@ export default function Checkbox(props) {
   const colors = useColors();
   const colorsMap = colors || defaultColors;
   const color = colorsMap[colorProp] || colorProp;
-  const checkbox = /*#__PURE__*/React.createElement(Box // NOTE: The absolute positioning of the checkbox element causes it to be placed below the overflow container
+  const checkbox = /*#__PURE__*/React.createElement(Box
+  // NOTE: The absolute positioning of the checkbox element causes it to be placed below the overflow container
   // PR filed with the rebassjs repo
   , {
     sx: {

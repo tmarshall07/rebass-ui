@@ -10,7 +10,6 @@ export function validateColor(strColor) {
   } catch (e) {
     return null;
   }
-
   return strColor;
 }
 //# sourceMappingURL=colors.js.map

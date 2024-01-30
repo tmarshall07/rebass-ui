@@ -1,7 +1,6 @@
 import _extends from "@babel/runtime/helpers/extends";
 import React from 'react';
 import { Switch as _Switch } from '@rebass/forms/styled-components';
-
 const Switch = props => {
   const {
     color = 'primary',
@@ -25,6 +24,5 @@ const Switch = props => {
     }
   }, props));
 };
-
 export default Switch;
 //# sourceMappingURL=Switch.js.map

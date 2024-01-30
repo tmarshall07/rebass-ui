@@ -4,11 +4,9 @@ class Debouncer {
     this.delay = delay;
     this.timeout = null;
   }
-
   getValue() {
     return this.value;
   }
-
   setValue(newValue, callback) {
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
@@ -16,8 +14,6 @@ class Debouncer {
       callback(newValue);
     }, this.delay);
   }
-
 }
-
 export default Debouncer;
 //# sourceMappingURL=debouncer.js.map
