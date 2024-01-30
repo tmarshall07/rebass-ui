@@ -67,4 +67,11 @@ export const textThemes = {
       },
     }
   },
+  a: {
+    regular: {
+      colors: {
+        slate: ['text-blue-500 dark:text-blue-300'],
+      },
+    }
+  }
 }
