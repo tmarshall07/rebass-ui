@@ -12,7 +12,7 @@ export const BaseButton = /*#__PURE__*/forwardRef((props, ref) => {
     color,
     ...rest
   } = props;
-  const classes = theme[variant]?.colors[color] || [];
+  const classes = theme[variant || '']?.colors[color || ''] || [];
   if (rounded) classes.push('rounded-full');
   const classNames = merge(classes, className, cn);
   return /*#__PURE__*/React.createElement("button", _extends({
