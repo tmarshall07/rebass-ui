@@ -3587,15 +3587,6 @@
     "@styled-system/core" "^5.1.2"
     "@styled-system/css" "^5.1.5"
 
-"@tannerjs/tailwind-base@workspace:^":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@tannerjs/tailwind-base/-/tailwind-base-1.0.0.tgz#0fb6aea2a7783d4cba25d55f02c1f6ec06f68e27"
-  integrity sha512-dxZUin0M4dpf1Rc/chNShEDySSSrOSnfaQ+8GvwLFMYqdKIwNonN1OMxq/JyrrQI0OJH6vZhkx82w6ofRfMEpA==
-  dependencies:
-    clsx "^2.1.0"
-    react "18.2.0"
-    tailwind-merge "^2.2.1"
-
 "@types/color-convert@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-2.0.0.tgz#8f5ee6b9e863dcbee5703f5a517ffb13d3ea4e22"

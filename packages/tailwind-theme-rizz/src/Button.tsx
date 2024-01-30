@@ -4,6 +4,4 @@ import { theme } from './index';
 
 export type ButtonProps = ThemeButtonProps<typeof theme.button>;
 
-export const Button = (props: PropsWithRef<ButtonProps>) => {
-  return <BaseButton theme={theme.button} {...props} />;
-};
+export const Button = (props: PropsWithRef<ButtonProps>) => <BaseButton theme={theme.button} {...props} />;

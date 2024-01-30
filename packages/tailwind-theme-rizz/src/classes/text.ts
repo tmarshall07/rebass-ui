@@ -23,3 +23,48 @@ export const colorPrimary600 = 'text-primary-600 dark:text-primary-400';
 export const colorPrimary700 = 'text-primary-700 dark:text-primary-300';
 export const colorPrimary800 = 'text-primary-800 dark:text-primary-200';
 export const colorPrimary900 = 'text-primary-900 dark:text-primary-100';
+
+export const textThemes = {
+  h1: {
+    regular: {
+      colors: {
+        slate: [...baseH1],
+      },
+    }
+  },
+  h2: {
+    regular: {
+      colors: {
+        slate: [...baseH2],
+      },
+    }
+  },
+  h3: {
+    regular: {
+      colors: {
+        slate: [...baseH3],
+      },
+    }
+  },
+  h4: {
+    regular: {
+      colors: {
+        slate: [...baseH4],
+      },
+    }
+  },
+  h5: {
+    regular: {
+      colors: {
+        slate: [...baseH5],
+      },
+    }
+  },
+  p: {
+    regular: {
+      colors: {
+        slate: [...baseP],
+      },
+    }
+  },
+}
