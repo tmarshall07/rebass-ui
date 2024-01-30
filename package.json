@@ -12,9 +12,6 @@
     "build-storybook": "build-storybook",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "declarations": "tsc -p ./packages/tailwind-base/tsconfig.json",
-    "build:esm": "cross-env BABEL_ENV=esmUnbundled babel --config-file ./.babelrc.js ./packages/tailwind-base/src --extensions '.ts','.tsx' --out-dir './packages/tailwind-base/lib/esm' --source-maps",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel --config-file ./.babelrc.js ./packages/tailwind-base/src --extensions '.ts','.tsx' --out-dir './packages/tailwind-base/lib/cjs' --source-maps",
     "buildjs": "node build.mjs"
   },
   "dependencies": {

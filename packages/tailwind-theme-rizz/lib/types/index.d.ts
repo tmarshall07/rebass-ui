@@ -1,3 +1,4 @@
+export * from './Button';
 export declare const theme: {
     button: {
         default: {

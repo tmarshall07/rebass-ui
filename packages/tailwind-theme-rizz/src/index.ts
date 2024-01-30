@@ -1,3 +1,5 @@
+export * from './Button';
+
 const baseSharedClasses = ['font-bold', 'py-[.5em]', 'px-[1em]', 'rounded'];
 
 const transparentSharedSlateClasses = [
@@ -22,21 +24,21 @@ export const theme = {
   button: {
     default: {
       colors: {
-        blue: [...baseSharedClasses, 'bg-blue-500 hover:bg-blue-700 active:bg-blue-800', 'text-white'],
-        slate: [...baseSharedClasses, 'bg-slate-500 hover:bg-slate-700 active:bg-slate-800', 'text-white'],
-      }
+        blue: [...baseSharedClasses, 'bg-blue-600 hover:bg-blue-700 active:bg-blue-800', 'text-white'],
+        slate: [...baseSharedClasses, 'bg-slate-600 hover:bg-slate-700 active:bg-slate-800', 'text-white'],
+      },
     },
     transparent: {
       colors: {
         blue: [...baseSharedClasses, ...transparentSharedBlueClasses],
         slate: [...baseSharedClasses, ...transparentSharedSlateClasses],
-      }
+      },
     },
     outline: {
       colors: {
         blue: [...baseSharedClasses, ...transparentSharedBlueClasses, 'border-blue-400', 'dark:border-blue-700'],
-        slate: [...baseSharedClasses, ...transparentSharedSlateClasses, 'border-slate-400', 'dark:border-slate-700']
-      }
-    }
-  }
-}
+        slate: [...baseSharedClasses, ...transparentSharedSlateClasses, 'border-slate-400', 'dark:border-slate-700'],
+      },
+    },
+  },
+};
