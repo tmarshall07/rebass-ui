@@ -6,15 +6,15 @@ export type BoxProps = PropsWithChildren &
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> &
   CnProps;
 
-const Box = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
+export const BaseBox = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   const { cn = '', className, ...rest } = props;
   const classNames = merge(cn, className);
 
   return <div ref={ref} className={classNames} {...rest} />;
 });
 
-Box.displayName = 'Box';
+BaseBox.displayName = 'BaseBox';
 
-export const Flex = (props: PropsWithRef<BoxProps>) => <Box ref={props.ref} {...props} cn={merge('flex', props.cn)} />;
-
-export default Box;
+export const Flex = (props: PropsWithRef<BoxProps>) => (
+  <BaseBox ref={props.ref} {...props} cn={merge('flex', props.cn)} />
+);

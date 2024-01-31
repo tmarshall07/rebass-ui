@@ -1,7 +1,9 @@
 {
   "name": "@tannerjs/tailwind-theme-rizz",
-  "version": "1.0.4",
-  "main": "index.js",
+  "version": "1.0.8",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
   "license": "MIT",
   "dependencies": {
     "@tannerjs/tailwind-base": "workspace:^"

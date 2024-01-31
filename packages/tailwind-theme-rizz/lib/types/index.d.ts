@@ -1,6 +1,8 @@
 export * from './classes';
 export * from './Button';
 export * from './Text';
+export * from './Card';
+export * from './Box';
 export declare const theme: {
     h1: {
         regular: {
@@ -47,27 +49,27 @@ export declare const theme: {
     a: {
         regular: {
             colors: {
-                slate: string[];
+                blue: string[];
             };
         };
     };
     button: {
         default: {
             colors: {
-                blue: string[];
-                slate: string[];
+                base: string[];
+                primary: string[];
             };
         };
         transparent: {
             colors: {
-                blue: string[];
-                slate: string[];
+                base: string[];
+                primary: string[];
             };
         };
         outline: {
             colors: {
-                blue: string[];
-                slate: string[];
+                base: string[];
+                primary: string[];
             };
         };
     };

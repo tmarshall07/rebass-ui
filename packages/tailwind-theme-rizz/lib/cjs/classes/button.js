@@ -3,32 +3,30 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.transparentSharedSlateClasses = exports.transparentSharedBlueClasses = exports.buttonTheme = exports.baseSharedClasses = void 0;
-var baseSharedClasses = ['font-bold', 'py-[.5em]', 'px-[1em]', 'rounded'];
-exports.baseSharedClasses = baseSharedClasses;
-var transparentSharedSlateClasses = ['hover:bg-slate-100', 'active:bg-slate-200', 'text-slate-600', 'dark:text-slate-300', 'dark:hover:bg-slate-800', 'dark:active:bg-slate-700'];
-exports.transparentSharedSlateClasses = transparentSharedSlateClasses;
-var transparentSharedBlueClasses = ['hover:bg-blue-100', 'active:bg-blue-200', 'text-blue-600', 'dark:text-blue-300', 'dark:hover:bg-blue-800', 'dark:active:bg-blue-700'];
-exports.transparentSharedBlueClasses = transparentSharedBlueClasses;
-var buttonTheme = {
+exports.transparentSharedSlateClasses = exports.transparentSharedPrimaryClasses = exports.buttonTheme = exports.baseSlateClasses = exports.baseSharedClasses = exports.basePrimaryClasses = void 0;
+var baseSharedClasses = exports.baseSharedClasses = ['font-bold', 'py-[.5em]', 'px-[1em]', 'rounded', 'transition-colors'];
+var baseSlateClasses = exports.baseSlateClasses = ['bg-base-600 hover:bg-base-700 active:bg-base-800', 'dark:text-base-800', 'dark:bg-base-300', 'dark:hover:bg-base-400', 'dark:active:bg-base-500', 'text-white'];
+var basePrimaryClasses = exports.basePrimaryClasses = ['bg-primary-600 hover:bg-primary-700 active:bg-primary-800', 'dark:text-base-800', 'dark:bg-primary-300', 'dark:hover:bg-primary-400', 'dark:active:bg-primary-500', 'text-white'];
+var transparentSharedSlateClasses = exports.transparentSharedSlateClasses = ['hover:bg-base-600/10', 'active:bg-base-600/15', 'text-base-600', 'dark:text-base-300', 'dark:hover:bg-base-200/10', 'dark:active:bg-base-200/15'];
+var transparentSharedPrimaryClasses = exports.transparentSharedPrimaryClasses = ['hover:bg-primary-600/10', 'active:bg-primary-600/15', 'text-primary-600', 'dark:text-primary-300', 'dark:hover:bg-primary-300/10', 'dark:active:bg-primary-300/15'];
+var buttonTheme = exports.buttonTheme = {
   "default": {
     colors: {
-      blue: [].concat(baseSharedClasses, ['bg-blue-600 hover:bg-blue-700 active:bg-blue-800', 'text-white']),
-      slate: [].concat(baseSharedClasses, ['bg-slate-600 hover:bg-slate-700 active:bg-slate-800', 'text-white'])
+      base: [].concat(baseSharedClasses, baseSlateClasses),
+      primary: [].concat(baseSharedClasses, basePrimaryClasses)
     }
   },
   transparent: {
     colors: {
-      blue: [].concat(baseSharedClasses, transparentSharedBlueClasses),
-      slate: [].concat(baseSharedClasses, transparentSharedSlateClasses)
+      base: [].concat(baseSharedClasses, transparentSharedSlateClasses),
+      primary: [].concat(baseSharedClasses, transparentSharedPrimaryClasses)
     }
   },
   outline: {
     colors: {
-      blue: [].concat(baseSharedClasses, transparentSharedBlueClasses, ['border-blue-400', 'dark:border-blue-700']),
-      slate: [].concat(baseSharedClasses, transparentSharedSlateClasses, ['border-slate-400', 'dark:border-slate-700'])
+      base: [].concat(baseSharedClasses, transparentSharedSlateClasses, ['border-2', 'border-base-300', 'dark:border-base-700']),
+      primary: [].concat(baseSharedClasses, transparentSharedPrimaryClasses, ['border-2', 'border-primary-300', 'dark:border-primary-400'])
     }
   }
 };
-exports.buttonTheme = buttonTheme;
 //# sourceMappingURL=button.js.map

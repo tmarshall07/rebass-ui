@@ -7,6 +7,10 @@ export * from './Button';
 
 export * from './Text';
 
+export * from './Card';
+
+export * from './Box';
+
 export const theme = {
   button: buttonTheme,
   ...textThemes,

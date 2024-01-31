@@ -5,7 +5,7 @@ const classes = `
   cursor-pointer
   w-6 h-6
 `;
-const Checkbox = /*#__PURE__*/forwardRef(({
+export const BaseCheckbox = /*#__PURE__*/forwardRef(({
   label,
   checked,
   onChange,
@@ -22,6 +22,5 @@ const Checkbox = /*#__PURE__*/forwardRef(({
     className: merge(classes, inputProps?.className)
   })), label);
 });
-Checkbox.displayName = 'Checkbox';
-export default Checkbox;
+BaseCheckbox.displayName = 'Checkbox';
 //# sourceMappingURL=Checkbox.js.map

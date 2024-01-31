@@ -14,7 +14,7 @@ const classes = `
   w-6 h-6
 `;
 
-const Checkbox = forwardRef(({ label, checked, onChange, inputProps, labelProps }: CheckboxProps) => {
+export const BaseCheckbox = forwardRef(({ label, checked, onChange, inputProps, labelProps }: CheckboxProps) => {
   return (
     <label className="flex gap-2 cursor-pointer group" {...labelProps}>
       <input
@@ -29,6 +29,4 @@ const Checkbox = forwardRef(({ label, checked, onChange, inputProps, labelProps 
   );
 });
 
-Checkbox.displayName = 'Checkbox';
-
-export default Checkbox;
+BaseCheckbox.displayName = 'Checkbox';

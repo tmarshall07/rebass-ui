@@ -6,6 +6,5 @@ export type CheckboxProps = {
     inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
     labelProps?: React.LabelHTMLAttributes<HTMLLabelElement>;
 };
-declare const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<unknown>>;
-export default Checkbox;
+export declare const BaseCheckbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<unknown>>;
 //# sourceMappingURL=Checkbox.d.ts.map

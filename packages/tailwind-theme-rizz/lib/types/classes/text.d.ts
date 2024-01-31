@@ -63,7 +63,7 @@ export declare const textThemes: {
     a: {
         regular: {
             colors: {
-                slate: string[];
+                blue: string[];
             };
         };
     };

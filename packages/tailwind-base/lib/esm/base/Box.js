@@ -1,7 +1,7 @@
 import _extends from "@babel/runtime/helpers/extends";
 import React, { forwardRef } from 'react';
 import { merge } from '../utils';
-const Box = /*#__PURE__*/forwardRef((props, ref) => {
+export const BaseBox = /*#__PURE__*/forwardRef((props, ref) => {
   const {
     cn = '',
     className,
@@ -13,11 +13,10 @@ const Box = /*#__PURE__*/forwardRef((props, ref) => {
     className: classNames
   }, rest));
 });
-Box.displayName = 'Box';
-export const Flex = props => /*#__PURE__*/React.createElement(Box, _extends({
+BaseBox.displayName = 'BaseBox';
+export const Flex = props => /*#__PURE__*/React.createElement(BaseBox, _extends({
   ref: props.ref
 }, props, {
   cn: merge('flex', props.cn)
 }));
-export default Box;
 //# sourceMappingURL=Box.js.map

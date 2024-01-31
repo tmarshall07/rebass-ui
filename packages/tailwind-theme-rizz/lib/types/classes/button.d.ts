@@ -1,23 +1,25 @@
 export declare const baseSharedClasses: string[];
+export declare const baseSlateClasses: string[];
+export declare const basePrimaryClasses: string[];
 export declare const transparentSharedSlateClasses: string[];
-export declare const transparentSharedBlueClasses: string[];
+export declare const transparentSharedPrimaryClasses: string[];
 export declare const buttonTheme: {
     default: {
         colors: {
-            blue: string[];
-            slate: string[];
+            base: string[];
+            primary: string[];
         };
     };
     transparent: {
         colors: {
-            blue: string[];
-            slate: string[];
+            base: string[];
+            primary: string[];
         };
     };
     outline: {
         colors: {
-            blue: string[];
-            slate: string[];
+            base: string[];
+            primary: string[];
         };
     };
 };
