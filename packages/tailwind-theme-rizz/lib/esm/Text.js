@@ -1,7 +1,7 @@
 import _extends from "@babel/runtime/helpers/extends";
 import React from 'react';
 import { H1 as BaseH1, H2 as BaseH2, H3 as BaseH3, H4 as BaseH4, H5 as BaseH5, P as BaseP, A as BaseA } from '@tannerjs/tailwind-base';
-import { theme } from './index';
+import { theme } from './theme';
 export const H1 = props => /*#__PURE__*/React.createElement(BaseH1, _extends({
   theme: theme.h1
 }, props));

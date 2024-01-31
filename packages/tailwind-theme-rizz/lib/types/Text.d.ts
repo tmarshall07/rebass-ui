@@ -1,6 +1,6 @@
 import { PropsWithRef } from 'react';
 import { ThemeHeadingProps, ThemeParagraphProps, ThemedAnchorProps } from '@tannerjs/tailwind-base';
-import { theme } from './index';
+import { theme } from './theme';
 export type H1Props = ThemeHeadingProps<typeof theme.h1>;
 export declare const H1: (props: PropsWithRef<H1Props>) => JSX.Element;
 export type H2Props = ThemeHeadingProps<typeof theme.h2>;

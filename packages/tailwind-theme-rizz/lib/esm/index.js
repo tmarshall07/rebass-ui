@@ -1,12 +1,8 @@
-import { buttonTheme } from './classes/button';
-import { textThemes } from './classes/text';
 export * from './classes';
 export * from './Button';
 export * from './Text';
 export * from './Card';
 export * from './Box';
-export const theme = {
-  button: buttonTheme,
-  ...textThemes
-};
+export * from './Input';
+export * from './theme';
 //# sourceMappingURL=index.js.map

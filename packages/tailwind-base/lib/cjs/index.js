@@ -80,4 +80,15 @@ Object.keys(_Box).forEach(function (key) {
     }
   });
 });
+var _Input = require("./base/Input");
+Object.keys(_Input).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Input[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _Input[key];
+    }
+  });
+});
 //# sourceMappingURL=index.js.map

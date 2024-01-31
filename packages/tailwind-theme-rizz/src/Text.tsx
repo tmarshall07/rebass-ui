@@ -11,7 +11,7 @@ import {
   ThemeParagraphProps,
   ThemedAnchorProps,
 } from '@tannerjs/tailwind-base';
-import { theme } from './index';
+import { theme } from './theme';
 
 export type H1Props = ThemeHeadingProps<typeof theme.h1>;
 export const H1 = (props: PropsWithRef<H1Props>) => <BaseH1 theme={theme.h1} {...props} />;
