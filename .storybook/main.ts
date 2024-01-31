@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
 import { join, dirname } from 'path';
+import { tailwindAddon } from './addons';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -16,6 +17,8 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-interactions'),
+    tailwindAddon,
+    '@storybook/addon-themes'
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-webpack5'),
