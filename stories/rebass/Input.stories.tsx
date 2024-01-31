@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Input from '../packages/scheme-ui/src/components/Input';
-import { theme } from '../styles/theme';
-import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
-import { lightScheme, schemes } from '../styles/colors';
-import Box from '../packages/scheme-ui/src/components/Box';
+import Input from '../../packages/scheme-ui/src/components/Input';
+import { theme } from '../../styles/theme';
+import { SchemeProvider } from '../../packages/scheme-ui/src/context/SchemeContext';
+import { lightScheme, schemes } from '../../styles/colors';
+import Box from '../../packages/scheme-ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Input',
+  title: 'Components/Rebass/Input',
   component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

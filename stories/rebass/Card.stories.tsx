@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Card from '../packages/scheme-ui/src/components/Card';
-import Box from '../packages/scheme-ui/src/components/Box';
-import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
-import theme from '../styles/theme';
-import { schemes } from '../styles/colors';
+import Card from '../../packages/scheme-ui/src/components/Card';
+import Box from '../../packages/scheme-ui/src/components/Box';
+import { SchemeProvider } from '../../packages/scheme-ui/src/context/SchemeContext';
+import theme from '../../styles/theme';
+import { schemes } from '../../styles/colors';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Card',
+  title: 'Components/Rebass/Card',
   component: Card,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

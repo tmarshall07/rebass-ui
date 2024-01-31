@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Checkbox from '../packages/scheme-ui/src/components/Checkbox';
-import Box from '../packages/scheme-ui/src/components/Box';
-import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
-import theme from '../styles/theme';
-import { schemes } from '../styles/colors';
+import Checkbox from '../../packages/scheme-ui/src/components/Checkbox';
+import Box from '../../packages/scheme-ui/src/components/Box';
+import { SchemeProvider } from '../../packages/scheme-ui/src/context/SchemeContext';
+import theme from '../../styles/theme';
+import { schemes } from '../../styles/colors';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Checkbox',
+  title: 'Components/Rebass/Checkbox',
   component: Checkbox,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

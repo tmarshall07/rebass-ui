@@ -1,15 +1,15 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Autocomplete from '../packages/scheme-ui/src/components/Autocomplete';
-import MenuItem from '../packages/scheme-ui/src/components/AutocompleteMenuItem';
-import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
-import theme from '../styles/theme';
-import { schemes } from '../styles/colors';
-import Box from '../packages/scheme-ui/src/components/Box';
+import Autocomplete from '../../packages/scheme-ui/src/components/Autocomplete';
+import MenuItem from '../../packages/scheme-ui/src/components/AutocompleteMenuItem';
+import { SchemeProvider } from '../../packages/scheme-ui/src/context/SchemeContext';
+import theme from '../../styles/theme';
+import { schemes } from '../../styles/colors';
+import Box from '../../packages/scheme-ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Components/Rebass/Autocomplete',
   component: Autocomplete,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

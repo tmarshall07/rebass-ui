@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button, IconButton, Box, SchemeProvider } from '../packages/scheme-ui/lib/esm/index';
+import { Button, IconButton, Box, SchemeProvider } from '../../packages/scheme-ui/lib/esm/index';
 import { faCheck } from '@fortawesome/pro-duotone-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import theme from '../styles/theme';
-import { schemes } from '../styles/colors';
+import theme from '../../styles/theme';
+import { schemes } from '../../styles/colors';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Button',
+  title: 'Components/Rebass/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

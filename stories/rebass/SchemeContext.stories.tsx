@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { theme } from '../styles/theme';
-import { SchemeProvider, useSchemeContext } from '../packages/scheme-ui/src/context/SchemeContext';
-import { schemes } from '../styles/colors';
-import Box from '../packages/scheme-ui/src/components/Box';
-import Switch from '../packages/scheme-ui/src/components/Switch';
-import { P } from '../packages/scheme-ui/src/components/Text';
-import { H3 } from '../packages/scheme-ui/src';
+import { theme } from '../../styles/theme';
+import { SchemeProvider, useSchemeContext } from '../../packages/scheme-ui/src/context/SchemeContext';
+import { schemes } from '../../styles/colors';
+import Box from '../../packages/scheme-ui/src/components/Box';
+import Switch from '../../packages/scheme-ui/src/components/Switch';
+import { H3 } from '../../packages/scheme-ui/src';
 
 const map = {
   dark: 'Dark',
@@ -15,7 +14,7 @@ const map = {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/SchemeProvider',
+  title: 'Components/Rebass/SchemeProvider',
   component: SchemeProvider,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},

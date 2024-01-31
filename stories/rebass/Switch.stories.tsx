@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Switch from '../packages/scheme-ui/src/components/Switch';
-import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
-import theme from '../styles/theme';
-import { schemes } from '../styles/colors';
-import Box from '../packages/scheme-ui/src/components/Box';
+import Switch from '../../packages/scheme-ui/src/components/Switch';
+import { SchemeProvider } from '../../packages/scheme-ui/src/context/SchemeContext';
+import theme from '../../styles/theme';
+import { schemes } from '../../styles/colors';
+import Box from '../../packages/scheme-ui/src/components/Box';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Switch',
+  title: 'Components/Rebass/Switch',
   component: Switch,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

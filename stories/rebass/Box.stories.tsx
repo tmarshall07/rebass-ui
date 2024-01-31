@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Box from '../packages/scheme-ui/src/components/Box';
-import { SchemeProvider } from '../packages/scheme-ui/src/context/SchemeContext';
-import theme from '../styles/theme';
-import { schemes } from '../styles/colors';
+import Box from '../../packages/scheme-ui/src/components/Box';
+import { SchemeProvider } from '../../packages/scheme-ui/src/context/SchemeContext';
+import theme from '../../styles/theme';
+import { schemes } from '../../styles/colors';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/Box',
+  title: 'Components/Rebass/Box',
   component: Box,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
