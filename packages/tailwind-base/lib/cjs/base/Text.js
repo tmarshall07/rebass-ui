@@ -28,7 +28,7 @@ var getClassesFromProps = function getClassesFromProps(props) {
   var classes = (0, _utils.getDefaultVariant)(theme, variant, color);
   return (0, _utils.merge)(classes, cn, className);
 };
-var H1 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var H1 = exports.H1 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -47,9 +47,8 @@ var H1 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.H1 = H1;
 H1.displayName = 'H1';
-var H2 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var H2 = exports.H2 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -68,9 +67,8 @@ var H2 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.H2 = H2;
 H2.displayName = 'H2';
-var H3 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var H3 = exports.H3 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -89,9 +87,8 @@ var H3 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.H3 = H3;
 H3.displayName = 'H3';
-var H4 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var H4 = exports.H4 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -110,9 +107,8 @@ var H4 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.H4 = H4;
 H4.displayName = 'H4';
-var H5 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var H5 = exports.H5 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -131,9 +127,8 @@ var H5 = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.H5 = H5;
 H5.displayName = 'H5';
-var P = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var P = exports.P = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -152,9 +147,8 @@ var P = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.P = P;
 P.displayName = 'P';
-var A = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
+var A = exports.A = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
   var cn = props.cn,
     theme = props.theme,
     variant = props.variant,
@@ -173,6 +167,5 @@ var A = /*#__PURE__*/(0, _react.forwardRef)(function (props, ref) {
     className: classNames
   }, rest));
 });
-exports.A = A;
 A.displayName = 'A';
 //# sourceMappingURL=Text.js.map

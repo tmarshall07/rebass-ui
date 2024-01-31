@@ -8,7 +8,7 @@ exports.merge = exports.getDefaultVariant = void 0;
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _tailwindMerge = require("tailwind-merge");
-var getDefaultVariant = function getDefaultVariant(theme, variant, color) {
+var getDefaultVariant = exports.getDefaultVariant = function getDefaultVariant(theme, variant, color) {
   var _themeVariant;
   var classes = [];
   // const classes = theme[variant || '']?.colors[color || ''] || [];
@@ -27,12 +27,10 @@ var getDefaultVariant = function getDefaultVariant(theme, variant, color) {
   }
   return classes;
 };
-exports.getDefaultVariant = getDefaultVariant;
-var merge = function merge() {
+var merge = exports.merge = function merge() {
   for (var _len = arguments.length, values = new Array(_len), _key = 0; _key < _len; _key++) {
     values[_key] = arguments[_key];
   }
   return (0, _tailwindMerge.twMerge)((0, _clsx["default"])(values));
 };
-exports.merge = merge;
 //# sourceMappingURL=index.js.map

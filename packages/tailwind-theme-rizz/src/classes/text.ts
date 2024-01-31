@@ -30,48 +30,48 @@ export const textThemes = {
       colors: {
         slate: [...baseH1],
       },
-    }
+    },
   },
   h2: {
     regular: {
       colors: {
         slate: [...baseH2],
       },
-    }
+    },
   },
   h3: {
     regular: {
       colors: {
         slate: [...baseH3],
       },
-    }
+    },
   },
   h4: {
     regular: {
       colors: {
         slate: [...baseH4],
       },
-    }
+    },
   },
   h5: {
     regular: {
       colors: {
         slate: [...baseH5],
       },
-    }
+    },
   },
   p: {
     regular: {
       colors: {
         slate: [...baseP],
       },
-    }
+    },
   },
   a: {
     regular: {
       colors: {
-        slate: ['text-blue-500 dark:text-blue-300'],
+        blue: ['text-blue-600 dark:text-blue-300'],
       },
-    }
-  }
-}
+    },
+  },
+};

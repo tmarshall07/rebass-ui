@@ -1,13 +1,22 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ['class', '[data-mode="dark"]'],
+  darkMode: 'class',
   content: [
-    // './src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'
     './packages/**/src/**/*.ts',
     './packages/**/src/**/*.tsx',
+    './stories/**/*.ts',
+    './stories/**/*.tsx',
+    './.storybook/preview.tsx',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: colors.blue,
+        base: colors.slate,
+      },
+    },
   },
   plugins: [],
 };

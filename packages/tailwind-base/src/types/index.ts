@@ -16,9 +16,12 @@ export type ThemePairings<TTheme extends ComponentThemeType> = {
   // access by keyof icon to flatten the map into a union
 }[keyof TTheme];
 
-export type SharedProps = {
+export type CnProps = {
+  cn?: string;
+};
+
+export type SharedProps = CnProps & {
   theme: ComponentThemeType;
   variant?: string;
   color?: string;
-  cn?: string;
 };

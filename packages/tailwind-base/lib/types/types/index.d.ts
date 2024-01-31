@@ -13,10 +13,12 @@ export type ThemePairings<TTheme extends ComponentThemeType> = {
         color?: keyof TTheme[VariantName]['colors'];
     };
 }[keyof TTheme];
-export type SharedProps = {
+export type CnProps = {
+    cn?: string;
+};
+export type SharedProps = CnProps & {
     theme: ComponentThemeType;
     variant?: string;
     color?: string;
-    cn?: string;
 };
 //# sourceMappingURL=index.d.ts.map
