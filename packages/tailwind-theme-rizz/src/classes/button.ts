@@ -18,7 +18,16 @@ export const basePrimaryClasses = [
   'text-white',
 ];
 
-export const transparentSharedSlateClasses = [
+export const baseSecondaryClasses = [
+  'bg-secondary-600 hover:bg-secondary-700 active:bg-secondary-800',
+  'dark:text-base-800',
+  'dark:bg-secondary-300',
+  'dark:hover:bg-secondary-400',
+  'dark:active:bg-secondary-500',
+  'text-white',
+];
+
+export const transparentSharedBaseClasses = [
   'hover:bg-base-600/10',
   'active:bg-base-600/15',
   'text-base-600',
@@ -36,24 +45,35 @@ export const transparentSharedPrimaryClasses = [
   'dark:active:bg-primary-300/15',
 ];
 
+export const transparentSharedSecondaryClasses = [
+  'hover:bg-secondary-600/10',
+  'active:bg-secondary-600/15',
+  'text-secondary-600',
+  'dark:text-secondary-300',
+  'dark:hover:bg-secondary-300/10',
+  'dark:active:bg-secondary-300/15',
+];
+
 export const buttonTheme = {
   default: {
     colors: {
       base: [...baseSharedClasses, ...baseSlateClasses],
       primary: [...baseSharedClasses, ...basePrimaryClasses],
+      secondary: [...baseSharedClasses, ...baseSecondaryClasses],
     },
   },
   transparent: {
     colors: {
-      base: [...baseSharedClasses, ...transparentSharedSlateClasses],
+      base: [...baseSharedClasses, ...transparentSharedBaseClasses],
       primary: [...baseSharedClasses, ...transparentSharedPrimaryClasses],
+      secondary: [...baseSharedClasses, ...transparentSharedSecondaryClasses],
     },
   },
   outline: {
     colors: {
       base: [
         ...baseSharedClasses,
-        ...transparentSharedSlateClasses,
+        ...transparentSharedBaseClasses,
         'border-2',
         'border-base-300',
         'dark:border-base-700',
@@ -64,6 +84,13 @@ export const buttonTheme = {
         'border-2',
         'border-primary-300',
         'dark:border-primary-400',
+      ],
+      secondary: [
+        ...baseSharedClasses,
+        ...transparentSharedSecondaryClasses,
+        'border-2',
+        'border-secondary-300',
+        'dark:border-secondary-400',
       ],
     },
   },

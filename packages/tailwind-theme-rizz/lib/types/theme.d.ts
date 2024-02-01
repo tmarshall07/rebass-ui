@@ -53,18 +53,21 @@ export declare const theme: {
             colors: {
                 base: string[];
                 primary: string[];
+                secondary: string[];
             };
         };
         transparent: {
             colors: {
                 base: string[];
                 primary: string[];
+                secondary: string[];
             };
         };
         outline: {
             colors: {
                 base: string[];
                 primary: string[];
+                secondary: string[];
             };
         };
     };
