@@ -12,6 +12,7 @@ export declare const colorBase700 = "text-slate-700 dark:text-slate-300";
 export declare const colorBase800 = "text-slate-800 dark:text-slate-200";
 export declare const colorBase900 = "text-slate-900 dark:text-slate-100";
 export declare const colorPrimary300 = "text-primary-300 dark:text-primary-700";
+export declare const colorPrimary400 = "text-primary-400 dark:text-primary-600";
 export declare const colorPrimary500 = "text-primary-500 dark:text-primary-500";
 export declare const colorPrimary600 = "text-primary-600 dark:text-primary-400";
 export declare const colorPrimary700 = "text-primary-700 dark:text-primary-300";

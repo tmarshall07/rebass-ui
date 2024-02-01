@@ -4468,7 +4468,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tannerjs/tailwind-base@npm:1.0.10, @tannerjs/tailwind-base@workspace:packages/tailwind-base":
+"@tannerjs/tailwind-base@npm:1.0.11, @tannerjs/tailwind-base@workspace:packages/tailwind-base":
   version: 0.0.0-use.local
   resolution: "@tannerjs/tailwind-base@workspace:packages/tailwind-base"
   dependencies:
@@ -4483,7 +4483,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tannerjs/tailwind-theme-rizz@workspace:packages/tailwind-theme-rizz"
   dependencies:
-    "@tannerjs/tailwind-base": "npm:1.0.10"
+    "@tannerjs/tailwind-base": "npm:1.0.11"
   languageName: unknown
   linkType: soft
 
