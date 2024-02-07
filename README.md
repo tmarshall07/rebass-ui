@@ -18,6 +18,18 @@ Build the packages:
 cd packages/scheme-ui
 yarn run build
 ```
+
+## Publishing tailwind
+1. Make changes to specific `package`, update `package.json` version.
+```
+yarn run buildjs --packages [package-name]
+```
+2. In package directory
+```
+npm publish --access=public
+```
+
+## Publishing storybook
 Build the Storybook static files:
 ```
 yarn run build-storybook

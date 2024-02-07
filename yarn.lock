@@ -4468,14 +4468,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tannerjs/tailwind-base@npm:1.0.11, @tannerjs/tailwind-base@workspace:packages/tailwind-base":
+"@tannerjs/tailwind-base@workspace:^, @tannerjs/tailwind-base@workspace:packages/tailwind-base":
   version: 0.0.0-use.local
   resolution: "@tannerjs/tailwind-base@workspace:packages/tailwind-base"
   dependencies:
-    "@types/react": "npm:18.2.0"
     clsx: "npm:^2.1.0"
-    react: "npm:18.2.0"
     tailwind-merge: "npm:^2.2.1"
+  peerDependencies:
+    react: "*"
   languageName: unknown
   linkType: soft
 
@@ -4483,7 +4483,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tannerjs/tailwind-theme-rizz@workspace:packages/tailwind-theme-rizz"
   dependencies:
-    "@tannerjs/tailwind-base": "npm:1.0.11"
+    "@tannerjs/tailwind-base": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -12129,15 +12129,6 @@ __metadata:
     loose-envify: "npm:^1.1.0"
     object-assign: "npm:^4.1.1"
   checksum: 10c0/07ae8959acf1596f0550685102fd6097d461a54a4fd46a50f88a0cd7daaa97fdd6415de1dcb4bfe0da6aa43221a6746ce380410fa848acc60f8ac41f6649c148
-  languageName: node
-  linkType: hard
-
-"react@npm:18.2.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
-  dependencies:
-    loose-envify: "npm:^1.1.0"
-  checksum: 10c0/b562d9b569b0cb315e44b48099f7712283d93df36b19a39a67c254c6686479d3980b7f013dc931f4a5a3ae7645eae6386b4aa5eea933baa54ecd0f9acb0902b8
   languageName: node
   linkType: hard
 
